@@ -1,0 +1,28 @@
+de:
+  baleipzig:
+    evoconfig:
+      numberOfGenes: 5
+    example:
+      exampleString: foo
+      exampleBoolean: true
+      exampleListWithStrings:
+        - test1
+        - test2
+        - test3
+      exampleListWithPojo:
+        -
+          name: foo
+          info: fooInfo
+        -
+          name: foo2
+          info: fooInfo2
+      exampleMapWithPojo:
+        entryOne:
+          name: foo
+          info: fooInfo
+        entryTwo:
+          name: foo2
+          info: fooInfo2
+      exampleMapWithString:
+        entryOne: foo
+        entryTwo: foo2
