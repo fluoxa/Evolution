@@ -1,7 +1,12 @@
 de:
   baleipzig:
     evoconfig:
-      numberOfGenes: 5
+      genomeConfig:
+        numberOfGenes: 5
+        lowerBound: -20
+        upperBound: 20
+      populationConfig:
+        populationSize: 5
     example:
       exampleString: foo
       exampleBoolean: true

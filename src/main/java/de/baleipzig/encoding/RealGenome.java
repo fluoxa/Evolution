@@ -1,18 +1,53 @@
 package de.baleipzig.encoding;
 
+import de.baleipzig.configuration.GenomeConfig;
+import lombok.ToString;
+
+import java.util.Random;
 import java.util.Vector;
 
-public class RealGenome implements Genome<Double> {
+@ToString
+public abstract class RealGenome implements Genome<Double> {
 
-    private final Vector<Double> genes;
+    protected final Vector<Double> genes;
 
-    public RealGenome(int numberOfGenes) {
+    protected final GenomeConfig config;
 
-        genes = new Vector<>(numberOfGenes);
+    private static final Random random = new Random();
+
+    public RealGenome(GenomeConfig config) {
+
+        this.config = config;
+
+        genes = new Vector<>(config.getNumberOfGenes());
+        for (int pos = 0; pos < config.getNumberOfGenes(); pos++) {
+            genes.add(config.getLowerBound() + random.nextDouble()*(config.getUpperBound()-config.getLowerBound()));
+        }
     }
 
-//    public Genome recombine(Genome male) {
-//
-//
-//    }
+    @Override
+    public int getGenomeLength(){
+
+        return genes.size();
+    }
+
+    @Override
+    public Double getAllele(int pos) {
+
+        if(pos < 0 || pos > genes.size()) {
+            throw new RuntimeException("getAllele: position out of Range");
+        }
+
+        return genes.elementAt(pos);
+    }
+
+    @Override
+    public void setAllele(int pos, Double value) {
+
+        if(pos < 0 || pos > genes.size()) {
+            throw new RuntimeException("setAllele: position out of Range");
+        }
+
+        genes.set(pos, value);
+    }
 }
