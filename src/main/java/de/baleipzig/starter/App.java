@@ -1,6 +1,5 @@
-package de.baleipzig;
+package de.baleipzig.starter;
 
-import de.baleipzig.starter.Application;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -24,6 +23,6 @@ public class App implements CommandLineRunner {
     }
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(App.class, args);
     }
 }
