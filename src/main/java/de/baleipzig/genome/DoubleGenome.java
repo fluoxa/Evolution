@@ -1,4 +1,4 @@
-package de.baleipzig.encoding;
+package de.baleipzig.genome;
 
 import de.baleipzig.configuration.GenomeConfig;
 import lombok.ToString;
@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Vector;
 
 @ToString
-public abstract class RealGenome implements Genome<Double> {
+public abstract class DoubleGenome implements Genome<Double> {
 
     protected final Vector<Double> genes;
 
@@ -15,7 +15,7 @@ public abstract class RealGenome implements Genome<Double> {
 
     private static final Random random = new Random();
 
-    public RealGenome(GenomeConfig config) {
+    public DoubleGenome(GenomeConfig config) {
 
         this.config = config;
 

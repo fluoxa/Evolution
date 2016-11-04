@@ -1,18 +1,18 @@
-package de.baleipzig.encoding;
+package de.baleipzig.genome;
 
 
 import de.baleipzig.configuration.GenomeConfig;
 
-public class IntermediateRecombGenome extends RealGenome {
+public class IntermediateRecombinationGenome extends DoubleGenome {
 
-    public IntermediateRecombGenome(GenomeConfig config) {
+    public IntermediateRecombinationGenome(GenomeConfig config) {
         super(config);
     }
 
     @Override
     public Genome<Double> recombine(Genome<Double> male) {
 
-        IntermediateRecombGenome childGenome = new IntermediateRecombGenome(this.config);
+        IntermediateRecombinationGenome childGenome = new IntermediateRecombinationGenome(this.config);
 
         for(int pos = 0; pos < this.getGenomeLength(); pos++){
             double averageAllele = (this.getAllele(pos)+male.getAllele(pos))/2;

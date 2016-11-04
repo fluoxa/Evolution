@@ -2,11 +2,12 @@ de:
   baleipzig:
     evoconfig:
       genomeConfig:
-        numberOfGenes: 5
+        numberOfGenes: 1
         lowerBound: -20
         upperBound: 20
       populationConfig:
         populationSize: 5
+        intermediateGenerationSize: 10
     example:
       exampleString: foo
       exampleBoolean: true

@@ -1,4 +1,4 @@
-package de.baleipzig.encoding;
+package de.baleipzig.genome;
 
 public interface Genome<T> {
 

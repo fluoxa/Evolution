@@ -16,6 +16,7 @@ public class EvoApplication {
     public void start() {
 
         population.populate();
-        System.out.println(population);
+
+
     }
 }

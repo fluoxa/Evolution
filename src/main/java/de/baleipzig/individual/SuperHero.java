@@ -1,16 +1,23 @@
 package de.baleipzig.individual;
 
-import de.baleipzig.encoding.RealGenome;
+import de.baleipzig.genome.Genome;
 
-public class SuperHero extends AbstractIndividual<RealGenome> {
+import java.util.function.Function;
+
+public class SuperHero<T extends Genome> extends AbstractIndividual<T> {
+
+    public SuperHero(Function<T, Double> fitnessFunction){
+        super(fitnessFunction);
+    }
+
 
     @Override
-    public Individual<RealGenome> mateWith(Individual<RealGenome> individual) {
+    public Individual<T> mateWith(Individual<T> individual) {
         return null;
     }
 
     @Override
-    public Individual<RealGenome> mutate() {
+    public Individual<T> mutate() {
         return null;
     }
 }
