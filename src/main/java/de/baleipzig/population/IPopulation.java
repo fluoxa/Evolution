@@ -1,19 +1,18 @@
 package de.baleipzig.population;
 
-import de.baleipzig.genome.Genome;
 import de.baleipzig.individual.Individual;
 
 import java.util.List;
 
-public interface IPopulation<Individual<? extends Genome>> {
+public interface IPopulation {
 
     void populate();
 
-    void add(T individual);
+    void add(Individual individual);
 
-    List<T> getPopulation();
+    List<Individual> getIndividuals();
 
-    Population<T> createNextGeneration();
+    IPopulation createNextGeneration();
 
     Individual getFittestIndividual();
 }

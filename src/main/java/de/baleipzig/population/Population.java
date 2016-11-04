@@ -1,7 +1,7 @@
 package de.baleipzig.population;
 
 import de.baleipzig.configuration.PopulationConfig;
-import de.baleipzig.genome.Genome;
+import de.baleipzig.configuration.strategies.Strategy;
 import de.baleipzig.individual.Individual;
 import de.baleipzig.individual.Parents;
 import lombok.Getter;
@@ -13,11 +13,10 @@ import org.springframework.context.ApplicationContext;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Function;
 
 @ToString
 @RequiredArgsConstructor
-public class Population<Individual<? extends Genome>> implements IPopulation<Individual> {
+public class Population implements IPopulation {
 
     //region -- member --
 
@@ -25,11 +24,10 @@ public class Population<Individual<? extends Genome>> implements IPopulation<Ind
     private ApplicationContext context;
 
     private final PopulationConfig config;
-    private final Function<Population, Parents> parentSelection;
-    private final Function<Population, Population> naturalSelection;
+    private final Strategy strategy;
 
     @Getter
-    protected List<Individual> population = new ArrayList<>(config.getPopulationSize());
+    protected List<Individual> individuals = new ArrayList<>();
 
     //endregion
 
@@ -37,15 +35,15 @@ public class Population<Individual<? extends Genome>> implements IPopulation<Ind
 
     @Override
     public void add(Individual individual) {
-         population.add(individual);
+         individuals.add(individual);
     }
 
     @Override
     public Individual getFittestIndividual() {
 
-        Collections.sort(population);
+        Collections.sort(individuals);
 
-        return population.get(0);
+        return individuals.get(0);
     }
 
     @Override
@@ -65,22 +63,22 @@ public class Population<Individual<? extends Genome>> implements IPopulation<Ind
     @Override
     public void populate() {
 
-        population = new ArrayList<>(config.getPopulationSize());
+        individuals = new ArrayList<>(config.getPopulationSize());
 
         for (int pos = 0; pos < config.getPopulationSize(); pos++) {
 
-            population.add((Individual)context.getBean(Individual.class));
+            individuals.add((Individual)context.getBean(Individual.class));
         }
     }
 
     private Population selectNaturally(Population population) {
 
-        return naturalSelection.apply(population);
+        return strategy.getNaturalSelection().apply(population);
     }
 
     private Parents selectParents(Population population) {
 
-        return parentSelection.apply(population);
+        return strategy.getParentSelection().apply(population);
     }
 
     //endregion

@@ -1,6 +1,8 @@
 package de.baleipzig.configuration;
 
+import de.baleipzig.configuration.strategies.NaturalSelection;
 import de.baleipzig.configuration.strategies.ParentSelection;
+import de.baleipzig.configuration.strategies.Strategy;
 import de.baleipzig.genome.DoubleGenome;
 import de.baleipzig.genome.Genome;
 import de.baleipzig.genome.IntermediateRecombinationGenome;
@@ -24,8 +26,8 @@ public class IocConfig {
     @Bean
     @Scope("prototype")
     public Population getPopulation() {
-
-        return new Population(evoConfig.getPopulationConfig(), ParentSelection.RANDOM_SELECTION);
+        Strategy strategy = new Strategy(ParentSelection.RANDOM_SELECTION, NaturalSelection.RANDOM_SELECTION);
+        return new Population(evoConfig.getPopulationConfig(), strategy);
     }
 
     @Bean
