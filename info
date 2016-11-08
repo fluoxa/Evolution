@@ -2,8 +2,11 @@
 
 - Minimierungsproblem 1
 - Strategien:
-    GenomRekombination: 
+    GenomRekombination: intermediaere rekombination
 
+    Natural Selection: range based Selection
+
+- Untersuchung des Einflusses der Mutation bei konstanter mutationsrate vs. altersabhängiger Mutation (rate hoch je älter)
 
 28.11.16 14:00
 wkliesch@web.de

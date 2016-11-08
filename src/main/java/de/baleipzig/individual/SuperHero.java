@@ -51,7 +51,7 @@ public class SuperHero<T extends Genome> implements Individual<T> {
     public Individual<T> mateWith(Individual<T> father) {
 
         Individual child = context.getBean(Individual.class);
-        strategy.getCrossing().recombine(this.getGenome(), father.getGenome(), child.getGenome());
+        strategy.getGenomeCrossing().recombine(this.getGenome(), father.getGenome(), child.getGenome());
 
         return child;
     }

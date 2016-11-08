@@ -1,14 +1,14 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 20
+      evolutionCycles: 1
       genomeConfig:
         numberOfGenes: 2
         lowerBound: -20
         upperBound: 20
       populationConfig:
         populationSize: 5
-        intermediateGenerationSize: 10
+        intermediateGenerationSize: 1
     example:
       exampleString: foo
       exampleBoolean: true

@@ -1,8 +1,8 @@
 package de.baleipzig.configuration;
 
 import de.baleipzig.configuration.strategies.*;
+import de.baleipzig.genome.DoubleGenome;
 import de.baleipzig.genome.Genome;
-import de.baleipzig.genome.IntermediateRecombinationGenome;
 import de.baleipzig.individual.Individual;
 import de.baleipzig.individual.SuperHero;
 import de.baleipzig.population.Avengers;
@@ -21,7 +21,7 @@ public class IocConfig {
     private final Strategy strategy = new Strategy(ParentSelection.FITTEST_SELECTION,
             NaturalSelection.RANDOM_SELECTION,
             Mutation.CHERNOBYL_MUTATION,
-            GenomeRecombination.BRUTAL_CROSSING);
+            GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
     @Bean
     @Scope("prototype")
@@ -39,6 +39,6 @@ public class IocConfig {
     @Bean
     @Scope("prototype")
     public Genome getGenome() {
-        return new IntermediateRecombinationGenome(evoConfig.getGenomeConfig());
+        return new DoubleGenome(evoConfig.getGenomeConfig());
     }
 }

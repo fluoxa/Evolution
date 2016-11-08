@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.Vector;
 
 @ToString
-public abstract class DoubleGenome implements Genome<Double> {
+public class DoubleGenome implements Genome<Double> {
 
     protected final Vector<Double> genes;
 

@@ -4,13 +4,13 @@ import de.baleipzig.individual.Individual;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.function.Consumer;
+import java.util.function.BiFunction;
 
 public class NaturalSelection {
-    public static final Consumer<List<Individual>> RANDOM_SELECTION = individuals -> {
-        int newSize = individuals.size()/2;
-        Collections.shuffle(individuals);
+    public static final BiFunction<List<Individual>, Integer, List<Individual>> RANDOM_SELECTION = (individuals, populationSize) -> {
 
-        individuals = individuals.subList(0, newSize);
+        Collections.shuffle(individuals);
+        individuals = individuals.subList(0, populationSize);
+        return individuals;
     };
 }

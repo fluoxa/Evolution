@@ -58,6 +58,7 @@ public class Avengers implements Population {
 
             Individual child = parents.getMother().mateWith(parents.getFather());
 
+            // testen, ob genome tatsächlich mutiert wird
             child.mutate();
 
             children.add(child);
@@ -65,9 +66,9 @@ public class Avengers implements Population {
 
         individuals.addAll(children);
 
-        //merge population with childPopulation
-
-        selectNaturally(individuals);
+        // war notwendig, hier auf rückgabewert umzustellen,
+        // da sonst scheinbar auf einer flachen kopie der liste operiert wird
+        individuals = selectNaturally(individuals);
     }
 
     @Override
@@ -81,9 +82,9 @@ public class Avengers implements Population {
         }
     }
 
-    private void selectNaturally(List<Individual> individuals) {
+    private List<Individual> selectNaturally(List<Individual> individuals) {
 
-        strategy.getNaturalSelection().accept(individuals);
+        return strategy.getNaturalSelection().apply(individuals, config.getPopulationSize());
     }
 
     private Parents selectParents(Population avengers) {
