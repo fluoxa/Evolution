@@ -7,6 +7,8 @@ public interface Individual<T extends Genome> extends Comparable<Individual<T>> 
     Double getFitness();
     T getGenome();
 
+    int getAge();
+
     Individual<T> mateWith(Individual<T> individual);
 
     void mutate();

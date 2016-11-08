@@ -26,6 +26,9 @@ public class SuperHero<T extends Genome> implements Individual<T> {
     @Setter
     protected T genome;
 
+    @Getter
+    protected int age = 0;
+
     @Override
     public void mutate() {
 
