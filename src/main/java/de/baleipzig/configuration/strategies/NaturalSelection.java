@@ -1,12 +1,16 @@
 package de.baleipzig.configuration.strategies;
 
-import de.baleipzig.population.Population;
+import de.baleipzig.individual.Individual;
 
-import java.util.function.Function;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Consumer;
 
-/**
- * Created by sonny on 04.11.16.
- */
 public class NaturalSelection {
-    public static final Function<Population, Population> RANDOM_SELECTION = population -> null;
+    public static final Consumer<List<Individual>> RANDOM_SELECTION = individuals -> {
+        int newSize = individuals.size()/2;
+        Collections.shuffle(individuals);
+
+        individuals = individuals.subList(0, newSize);
+    };
 }

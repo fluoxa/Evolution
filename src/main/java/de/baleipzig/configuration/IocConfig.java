@@ -1,14 +1,12 @@
 package de.baleipzig.configuration;
 
-import de.baleipzig.configuration.strategies.NaturalSelection;
-import de.baleipzig.configuration.strategies.ParentSelection;
-import de.baleipzig.configuration.strategies.Strategy;
+import de.baleipzig.configuration.strategies.*;
 import de.baleipzig.genome.DoubleGenome;
 import de.baleipzig.genome.Genome;
 import de.baleipzig.genome.IntermediateRecombinationGenome;
 import de.baleipzig.individual.Individual;
 import de.baleipzig.individual.SuperHero;
-import de.baleipzig.population.Population;
+import de.baleipzig.population.Avengers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,11 +21,15 @@ public class IocConfig {
 
     private final EvoConfig evoConfig;
 
+    private final Strategy strategy = new Strategy(ParentSelection.RANDOM_SELECTION,
+            NaturalSelection.RANDOM_SELECTION,
+            Mutation.CHERNOBYL_MUTATION,
+            GenomeRecombination.BRUTAL_CROSSING);
+
     @Bean
     @Scope("prototype")
-    public Population getPopulation() {
-        Strategy strategy = new Strategy(ParentSelection.RANDOM_SELECTION, NaturalSelection.RANDOM_SELECTION);
-        return new Population(evoConfig.getPopulationConfig(), strategy);
+    public Avengers getPopulation() {
+        return new Avengers(evoConfig.getPopulationConfig(), strategy);
     }
 
     @Bean
@@ -35,7 +37,7 @@ public class IocConfig {
     public Individual getIndividual() {
 
         Function<DoubleGenome, Double> fitnessFunction = genome -> genome.getAllele(0);
-        return new SuperHero(fitnessFunction);
+        return new SuperHero(fitnessFunction, strategy);
     }
 
     @Bean

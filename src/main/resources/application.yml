@@ -1,6 +1,7 @@
 de:
   baleipzig:
     evoconfig:
+      evolutionCycles: 20
       genomeConfig:
         numberOfGenes: 1
         lowerBound: -20

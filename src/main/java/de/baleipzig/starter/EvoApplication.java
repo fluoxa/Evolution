@@ -1,5 +1,6 @@
 package de.baleipzig.starter;
 
+import de.baleipzig.configuration.EvoConfig;
 import de.baleipzig.population.Population;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,17 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class EvoApplication {
 
+    private final EvoConfig evoConfig;
     private final ApplicationContext context;
-    private final Population population;
+    private Population avengers;
 
     public void start() {
+        avengers = context.getBean(Population.class);
+        avengers.populate();
 
-        population.populate();
-
-
+        for (int cycle = 0; cycle < evoConfig.getEvolutionCycles(); cycle++) {
+           avengers.createNextGeneration();
+        }
+        System.out.println(avengers.getFittestIndividual());
     }
 }

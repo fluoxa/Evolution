@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(locations="classpath:Application.yml", prefix="de.baleipzig.evoconfig")
 public class EvoConfig {
 
+    private int evolutionCycles;
     private GenomeConfig genomeConfig;
     private PopulationConfig populationConfig;
 }
