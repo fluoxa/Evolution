@@ -42,7 +42,7 @@ public class Avengers implements Population {
     @Override
     public Individual getFittestIndividual() {
 
-        Collections.sort(individuals);
+        Collections.sort(individuals, Collections.reverseOrder());
 
         return individuals.get(0);
     }
