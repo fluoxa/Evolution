@@ -18,7 +18,7 @@ public class IocConfig {
 
     private final EvoConfig evoConfig;
 
-    private final Strategy strategy = new Strategy(ParentSelection.FITTEST_SELECTION,
+    private final Strategy strategy = new Strategy(ParentSelection.FITTEST_PARENT_SELECTION,
             NaturalSelection.RANDOM_SELECTION,
             Mutation.CHERNOBYL_MUTATION,
             GenomeRecombination.INTERMEDIATE_RECOMBINATION);
