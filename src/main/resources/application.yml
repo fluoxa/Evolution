@@ -3,7 +3,7 @@ de:
     evoconfig:
       evolutionCycles: 20
       genomeConfig:
-        numberOfGenes: 1
+        numberOfGenes: 2
         lowerBound: -20
         upperBound: 20
       populationConfig:
