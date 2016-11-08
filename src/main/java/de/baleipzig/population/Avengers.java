@@ -58,11 +58,11 @@ public class Avengers implements Population {
 
             Individual child = parents.getMother().mateWith(parents.getFather());
 
-            // testen, ob genome tatsächlich mutiert wird
-            child.mutate();
-
             children.add(child);
         }
+
+        // testen, ob genome tatsächlich mutiert wird
+        individuals.forEach(Individual::mutate);
 
         individuals.addAll(children);
 

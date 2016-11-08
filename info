@@ -2,11 +2,22 @@
 
 - Minimierungsproblem 1
 - Strategien:
+    ParentSelection: die vier fittesten erzeugen zwei kinder + rest: q-fache Turnierselektion
     GenomRekombination: intermediaere rekombination
+    Mutation: mutation aller individuen:
+              (1) konstante Mutation (mutation nur der kinder, dh. mutation nur, wenn alter == 0)
+              (2) altersabhängige mutation (mutation umso höher je älter das individuum -> früher einmal gute Individuen werden gegen ende aus der population raus mutiert,
+                  d.h. um die besten kandidaten nicht zu verlieren, müssen diese sich definitiv fortpflanzen)
+    Natural Selection: 50% rangbasierte Selektion (Auswahlwahrscheinlichkeit steigt mit Fitness, dublikatfrei) + 50% zufallsselektion
 
-    Natural Selection: range based Selection
 
-- Untersuchung des Einflusses der Mutation bei konstanter mutationsrate vs. altersabhängiger Mutation (rate hoch je älter)
+Für Minimierungsproblem 1 bei unterschiedlichen Dimensionen des Grundraumes
+- Untersuchung des Einflusses der Mutation bei konstanter mutationsrate vs. altersabhängiger Mutation (rate umso höher je älter)
+- Elternselektion: (1) zufällig
+                   (2) deterministisch (nur die besten 20% dürfen sich fortpflanzen: deren paarung ist dann zufällig)
+                   (3) mixed: 50% deterministisch + 50% zufällig
+
+In Summe: sechs zu untersuchende Szenarien, wobei jedes Szenarium für unterschiedliche Dimensionen getestet wird.
 
 28.11.16 14:00
 wkliesch@web.de
