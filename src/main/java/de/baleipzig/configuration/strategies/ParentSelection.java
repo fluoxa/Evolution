@@ -12,14 +12,14 @@ import java.util.function.Function;
 public class ParentSelection {
 
     public static final Function<Population, Parents> RANDOM_PARENT_SELECTION =
-            population -> selectListOperation(population, individuals -> {
+            population -> selectByListManipulation(population, individuals -> {
                 Collections.shuffle(individuals);
                 return individuals;
         });
 
 
     public static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
-            population -> selectListOperation(population, individuals -> {
+            population -> selectByListManipulation(population, individuals -> {
                 Collections.sort(individuals);
                 Long consideredIndividualCount = Math.round(individuals.size() * 0.2);
                 individuals = individuals.subList(0, consideredIndividualCount.intValue());
@@ -38,18 +38,15 @@ public class ParentSelection {
             };
 
 
-    private static Parents selectListOperation(Population population, Function<List<Individual>, List<Individual>> function) {
+    private static Parents selectByListManipulation(Population population, Function<List<Individual>, List<Individual>> function) {
         Parents parents = new Parents();
 
         List<Individual> potentialParents = function.apply(population.getIndividuals());
-
-        Collections.sort(potentialParents, Collections.reverseOrder());
 
         parents.setFather(potentialParents.get(0));
         parents.setMother(potentialParents.get(1));
         return parents;
     }
-
 
     public static final Function<Population, Parents> FITTEST_PARENT_SELECTION = population -> {
         Parents parents = new Parents();
