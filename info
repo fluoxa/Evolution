@@ -2,7 +2,7 @@
 
 - Minimierungsproblem 1
 - Strategien:
-    ParentSelection: die vier fittesten erzeugen zwei kinder + rest: q-fache Turnierselektion
+    ParentSelection: siehe unten
     GenomRekombination: intermediaere rekombination
     Mutation: mutation aller individuen:
               (1) konstante Mutation (mutation nur der kinder, dh. mutation nur, wenn alter == 0)
