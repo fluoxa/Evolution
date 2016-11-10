@@ -8,7 +8,7 @@
               (1) konstante Mutation (mutation nur der kinder, dh. mutation nur, wenn alter == 0)
               (2) altersabhängige mutation (mutation umso höher je älter das individuum -> früher einmal gute Individuen werden gegen ende aus der population raus mutiert,
                   d.h. um die besten kandidaten nicht zu verlieren, müssen diese sich definitiv fortpflanzen)
-    Natural Selection: 50% rangbasierte Selektion (Auswahlwahrscheinlichkeit steigt mit Fitness, dublikatfrei) + 50% zufallsselektion
+    Natural Selection: 50% rangbasierte Selektion nach Roulette-Verfahren (Auswahlwahrscheinlichkeit steigt mit Fitness, dublikatfrei) + 50% zufallsselektion
 
 
 Für Minimierungsproblem 1 bei unterschiedlichen Dimensionen des Grundraumes
