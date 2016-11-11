@@ -42,6 +42,11 @@ public class SuperHero<T extends Genome> implements Individual<T> {
     }
 
     @Override
+    public void incrementAge() {
+        age++;
+    }
+
+    @Override
     public int compareTo(Individual<T> o) {
 
         return this.getFitness().compareTo(o.getFitness());
