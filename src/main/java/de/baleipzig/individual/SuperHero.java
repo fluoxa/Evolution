@@ -32,7 +32,7 @@ public class SuperHero<T extends Genome> implements Individual<T> {
     @Override
     public void mutate() {
 
-        strategy.getMutation().accept(genome);
+        strategy.getMutation().accept(this);
     }
 
     @Override

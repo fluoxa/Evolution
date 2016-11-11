@@ -1,6 +1,7 @@
 package de.baleipzig.genome;
 
 import de.baleipzig.configuration.GenomeConfig;
+import lombok.Getter;
 import lombok.ToString;
 
 import java.util.Random;
@@ -9,7 +10,8 @@ import java.util.Vector;
 @ToString
 public class DoubleGenome implements Genome<Double> {
 
-    protected final Vector<Double> genes;
+    @Getter
+    protected final Vector<Double> alleles;
 
     protected final GenomeConfig config;
 
@@ -19,35 +21,35 @@ public class DoubleGenome implements Genome<Double> {
 
         this.config = config;
 
-        genes = new Vector<>(config.getNumberOfGenes());
+        alleles = new Vector<>(config.getNumberOfGenes());
         for (int pos = 0; pos < config.getNumberOfGenes(); pos++) {
-            genes.add(config.getLowerBound() + random.nextDouble()*(config.getUpperBound()-config.getLowerBound()));
+            alleles.add(config.getLowerBound() + random.nextDouble()*(config.getUpperBound()-config.getLowerBound()));
         }
     }
 
     @Override
     public int getGenomeLength(){
 
-        return genes.size();
+        return alleles.size();
     }
 
     @Override
     public Double getAllele(int pos) {
 
-        if(pos < 0 || pos > genes.size()) {
+        if(pos < 0 || pos > alleles.size()) {
             throw new RuntimeException("getAllele: position out of Range");
         }
 
-        return genes.elementAt(pos);
+        return alleles.elementAt(pos);
     }
 
     @Override
     public void setAllele(int pos, Double value) {
 
-        if(pos < 0 || pos > genes.size()) {
+        if(pos < 0 || pos > alleles.size()) {
             throw new RuntimeException("setAllele: position out of Range");
         }
 
-        genes.set(pos, value);
+        alleles.set(pos, value);
     }
 }

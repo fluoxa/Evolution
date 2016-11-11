@@ -6,6 +6,8 @@ de:
         numberOfGenes: 2
         lowerBound: -20
         upperBound: 20
+        mutationRate: 0.01
+        mutationMaxLength: 5
       populationConfig:
         populationSize: 5
         intermediateGenerationSize: 1
