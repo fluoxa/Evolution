@@ -7,6 +7,7 @@ import de.baleipzig.individual.Parents;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -50,9 +51,9 @@ public class Avengers implements Population {
     @Override
     public void createNextGeneration() {
 
-        List<Individual> children = new ArrayList<>(config.getIntermediateGenerationSize());
+        List<Individual> children = new ArrayList<>(config.getChildrenGenerationSize());
 
-        for(int i = 0; i < config.getIntermediateGenerationSize(); i++) {
+        for(int i = 0; i < config.getChildrenGenerationSize(); i++) {
 
             Parents parents = selectParents(this);
 
@@ -80,6 +81,16 @@ public class Avengers implements Population {
 
             individuals.add(context.getBean(Individual.class));
         }
+    }
+
+    @Override
+    public Statistic createStatistic() {
+
+        DescriptiveStatistics statistics = new DescriptiveStatistics();
+
+        individuals.forEach(individual -> statistics.addValue(individual.getFitness()));
+
+        return new Statistic(statistics.getMean(), statistics.getStandardDeviation(), statistics.getMax());
     }
 
     private List<Individual> selectNaturally(List<Individual> individuals) {

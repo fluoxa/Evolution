@@ -17,7 +17,6 @@ public class ParentSelection {
                 return individuals;
         });
 
-
     public static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
             population -> selectByListManipulation(population, individuals -> {
                 Collections.sort(individuals, Collections.reverseOrder());

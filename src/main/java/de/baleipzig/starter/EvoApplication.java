@@ -2,6 +2,7 @@ package de.baleipzig.starter;
 
 import de.baleipzig.configuration.EvoConfig;
 import de.baleipzig.population.Population;
+import de.baleipzig.population.Statistic;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -22,11 +23,15 @@ public class EvoApplication {
         for (int cycle = 0; cycle < evoConfig.getEvolutionCycles(); cycle++) {
             avengers.createNextGeneration();
 
-            avengers.getIndividuals().forEach(individual -> System.out.printf("%s   ", individual.getFitness()));
-            System.out.println("");
+
+            if(cycle % 10 == 0) {
+                Statistic statistic = avengers.createStatistic();
+                System.out.println(String.format("%s Fitness Mean: %.4f  +/-  %.4f  Best Fitness: %.4f", cycle, statistic.getMean(), statistic.getStandardDeviation(), statistic.getBestFitness()));
+            }
         }
 
-        System.out.println("Fittest member:");
-        System.out.println(avengers.getFittestIndividual().getFitness());
+        System.out.println("Final Statistic:");
+        Statistic statistic = avengers.createStatistic();
+        System.out.println(String.format("Fitness Mean: %.4f  +/-  %.4f  Best Fitness: %.4f", statistic.getMean(), statistic.getStandardDeviation(), statistic.getBestFitness()));
     }
 }

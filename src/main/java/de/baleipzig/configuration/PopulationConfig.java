@@ -6,5 +6,5 @@ import lombok.Data;
 public class PopulationConfig {
 
     private int populationSize;
-    private int intermediateGenerationSize;
+    private int childrenGenerationSize;
 }

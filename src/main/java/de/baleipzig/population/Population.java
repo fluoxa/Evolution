@@ -15,4 +15,5 @@ public interface Population {
     void createNextGeneration();
 
     Individual getFittestIndividual();
+    Statistic createStatistic();
 }
