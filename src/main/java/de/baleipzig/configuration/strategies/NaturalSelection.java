@@ -21,10 +21,21 @@ public class NaturalSelection {
 
         List<Individual> selectedIndividuals = new ArrayList<>(populationSize);
 
-        Collections.sort(candidates, Collections.reverseOrder());
+        List<Individual> remainingCandidates = new ArrayList<>(candidates);
 
-        Supplier<Individual> rankStrategy = () -> candidates.get(getRankBasedIndex(candidates.size()));
-        Supplier<Individual> shuffleStrategy = () -> candidates.get((int) (candidates.size()*Math.random()));
+        Collections.sort(remainingCandidates, Collections.reverseOrder());
+
+        Supplier<Individual> rankStrategy = () -> {
+            Individual candidate = remainingCandidates.get(getRankBasedIndex(remainingCandidates.size()));
+            remainingCandidates.remove(candidate);
+            return candidate;
+        };
+
+        Supplier<Individual> shuffleStrategy = () -> {
+            Individual candidate = remainingCandidates.get((int) (remainingCandidates.size() * Math.random()));
+            remainingCandidates.remove(candidate);
+            return candidate;
+        };
 
         fillListUpTo(selectedIndividuals, populationSize/2, rankStrategy);
         fillListUpTo(selectedIndividuals, populationSize, shuffleStrategy);
@@ -54,12 +65,7 @@ public class NaturalSelection {
     private static void fillListUpTo(List<Individual> list, int aimedSize,  Supplier<Individual> supplier) {
 
         while(list.size() < aimedSize) {
-
-            Individual candidate = supplier.get();
-
-            if(!list.contains(candidate)) {
-                list.add(candidate);
-            }
+                list.add(supplier.get());
         }
     }
 }
