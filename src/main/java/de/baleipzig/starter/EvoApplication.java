@@ -20,7 +20,10 @@ public class EvoApplication {
         avengers.populate();
 
         for (int cycle = 0; cycle < evoConfig.getEvolutionCycles(); cycle++) {
-           avengers.createNextGeneration();
+            avengers.createNextGeneration();
+
+            avengers.getIndividuals().forEach(individual -> System.out.printf("%s   ", individual.getFitness()));
+            System.out.println("");
         }
 
         System.out.println("Fittest member:");

@@ -1,16 +1,16 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 1
+      evolutionCycles: 10
       genomeConfig:
         numberOfGenes: 2
-        lowerBound: -20
-        upperBound: 20
-        mutationRate: 0.01
-        mutationMaxLength: 5
+        lowerBound: -512
+        upperBound: 511
+        mutationRate: 1
+        mutationMaxLength: 25
       populationConfig:
         populationSize: 5
-        intermediateGenerationSize: 1
+        intermediateGenerationSize: 10
     example:
       exampleString: foo
       exampleBoolean: true

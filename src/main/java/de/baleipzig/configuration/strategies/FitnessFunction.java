@@ -6,7 +6,6 @@ import java.util.function.Function;
 
 public class FitnessFunction {
 
-
     public static Function<Genome<Double>, Double> griewankFitnessFactory(int numberOfArgs) {
 
         Function<Genome<Double>, Double> griewankFunc = (genome) -> {

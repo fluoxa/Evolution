@@ -13,18 +13,18 @@ import java.util.function.Function;
 
 @ToString
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
-public class SuperHero<T extends Genome> implements Individual<T> {
+public class SuperHero implements Individual<Genome<Double>> {
 
     @Autowired
     private ApplicationContext context;
 
-    private final Function<T, Double> fitnessFunction;
+    private final Function<Genome<Double>, Double> fitnessFunction;
     private final Strategy strategy;
 
     @Autowired
     @Getter
     @Setter
-    protected T genome;
+    protected Genome<Double> genome;
 
     @Getter
     protected int age = 0;
@@ -47,13 +47,13 @@ public class SuperHero<T extends Genome> implements Individual<T> {
     }
 
     @Override
-    public int compareTo(Individual<T> o) {
+    public int compareTo(Individual<Genome<Double>> o) {
 
         return this.getFitness().compareTo(o.getFitness());
     }
 
     @Override
-    public Individual<T> mateWith(Individual<T> father) {
+    public Individual<Genome<Double>> mateWith(Individual<Genome<Double>> father) {
 
         Individual child = context.getBean(Individual.class);
         strategy.getGenomeCrossing().recombine(this.getGenome(), father.getGenome(), child.getGenome());
