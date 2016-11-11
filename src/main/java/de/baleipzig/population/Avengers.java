@@ -61,14 +61,14 @@ public class Avengers implements Population {
             children.add(child);
         }
 
+        individuals.addAll(children);
+
         // testen, ob genome tatsächlich mutiert wird
         individuals.forEach(Individual::mutate);
 
-        individuals.forEach(Individual::incrementAge);
-
-        individuals.addAll(children);
-
         individuals = selectNaturally(individuals);
+
+        individuals.forEach(Individual::incrementAge);
     }
 
     @Override
