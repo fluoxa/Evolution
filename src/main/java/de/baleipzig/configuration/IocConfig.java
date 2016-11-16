@@ -22,49 +22,20 @@ public class IocConfig {
     private Strategy selectedStrategy;
 
     @Getter
-    private final Strategy constMutationRandomParentSelection;
-    @Getter
-    private final Strategy constMutationDeterministicParentSelection;
-    @Getter
     private final Strategy constMutationMixedParentSelection;
     @Getter
     private final Strategy ageBasedMutationRandomParentSelection;
-    @Getter
-    private final Strategy ageBasedMutationDeterministicParentSelection;
-    @Getter
-    private final Strategy ageBasedMutationMixedParentSelection;
 
     @Autowired
     public IocConfig(EvoConfig evoConfig) {
         this.evoConfig = evoConfig;
 
-        constMutationRandomParentSelection = new Strategy(ParentSelection.RANDOM_PARENT_SELECTION,
+        constMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
                 NaturalSelection.RANK_RANDOM_SELECTION,
                 Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
-        constMutationDeterministicParentSelection = new Strategy(ParentSelection.DETERMINISTIC_PARENT_SELECTION,
-                NaturalSelection.RANK_RANDOM_SELECTION,
-                Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
-                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
-
-        constMutationMixedParentSelection = new Strategy(ParentSelection.MIXED_PARENT_SELECTION,
-                NaturalSelection.RANK_RANDOM_SELECTION,
-                Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
-                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
-
-
-        ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.RANDOM_PARENT_SELECTION,
-                NaturalSelection.RANK_RANDOM_SELECTION,
-                Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
-                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
-
-        ageBasedMutationDeterministicParentSelection = new Strategy(ParentSelection.DETERMINISTIC_PARENT_SELECTION,
-                NaturalSelection.RANK_RANDOM_SELECTION,
-                Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
-                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
-
-        ageBasedMutationMixedParentSelection = new Strategy(ParentSelection.MIXED_PARENT_SELECTION,
+        ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
                 NaturalSelection.RANK_RANDOM_SELECTION,
                 Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
@@ -81,13 +52,13 @@ public class IocConfig {
     @Bean
     @Scope("prototype")
     public Individual getIndividual() {
-
         return new SuperHero(FitnessFunction.griewankFitnessFactory(evoConfig.getGenomeConfig().getNumberOfGenes()), selectedStrategy);
     }
 
     @Bean
     @Scope("prototype")
     public Genome getGenome() {
+
         return new DoubleGenome(evoConfig.getGenomeConfig());
     }
 }

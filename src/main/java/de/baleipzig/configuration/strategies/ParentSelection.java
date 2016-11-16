@@ -11,14 +11,25 @@ import java.util.function.Function;
 
 public class ParentSelection {
 
-    public static final Function<Population, Parents> RANDOM_PARENT_SELECTION =
+    public static Function<Population, Parents> mixedParentSelectionFactory(double ratio) {
+       return population -> {
+            double randomValue = Math.random();
+            if(randomValue < ratio) {
+                return DETERMINISTIC_PARENT_SELECTION.apply(population);
+            } else {
+                return RANDOM_PARENT_SELECTION.apply(population);
+            }
+        };
+    }
+
+    private static final Function<Population, Parents> RANDOM_PARENT_SELECTION =
             population -> selectByListManipulation(population, individuals -> {
                 Collections.shuffle(individuals);
                 return individuals;
-        });
+            });
 
 
-    public static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
+    private static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
             population -> selectByListManipulation(population, individuals -> {
                 Collections.sort(individuals, Collections.reverseOrder());
                 Long consideredIndividualCount = Math.max(2, Math.round(individuals.size() * 0.2));
@@ -26,17 +37,6 @@ public class ParentSelection {
                 Collections.shuffle(individuals);
                 return individuals;
             });
-
-    public static final Function<Population, Parents> MIXED_PARENT_SELECTION =
-            population -> {
-                double randomValue = Math.random();
-                if(randomValue < 0.5) {
-                    return DETERMINISTIC_PARENT_SELECTION.apply(population);
-                } else {
-                    return RANDOM_PARENT_SELECTION.apply(population);
-                }
-            };
-
 
     private static Parents selectByListManipulation(Population population, Function<List<Individual>, List<Individual>> function) {
         Parents parents = new Parents();

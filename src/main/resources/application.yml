@@ -2,6 +2,7 @@ de:
   baleipzig:
     evoconfig:
       evolutionCycles: 10
+      deterministicRandomParentRation: 0.37
       genomeConfig:
         numberOfGenes: 2
         lowerBound: -512
