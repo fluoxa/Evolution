@@ -13,6 +13,7 @@ public class EvoConfig {
 
     private int evolutionCycles;
     private double deterministicRandomParentRation;
+    private double rankRandomRatioNaturalSelection;
     private GenomeConfig genomeConfig;
     private PopulationConfig populationConfig;
 }

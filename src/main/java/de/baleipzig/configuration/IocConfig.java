@@ -25,19 +25,27 @@ public class IocConfig {
     private final Strategy constMutationMixedParentSelection;
     @Getter
     private final Strategy ageBasedMutationRandomParentSelection;
+    @Getter
+    private final Strategy caroTimStrategy;
 
     @Autowired
     public IocConfig(EvoConfig evoConfig) {
         this.evoConfig = evoConfig;
 
         constMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
-                NaturalSelection.RANK_RANDOM_SELECTION,
+                NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
                 Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
         ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
-                NaturalSelection.RANK_RANDOM_SELECTION,
+                NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
                 Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
+                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
+
+        caroTimStrategy = new Strategy(
+                ParentSelection.mixedParentSelectionFactory(0.),
+                NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
+                Mutation.getAgeBasedMutationStrategyWithDecreasingMutationValue(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
         selectedStrategy = constMutationMixedParentSelection;

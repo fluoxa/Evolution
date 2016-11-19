@@ -5,13 +5,11 @@ import de.baleipzig.genome.Genome;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
 import java.util.function.Function;
 
-@ToString
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SuperHero implements Individual<Genome<Double>> {
 
@@ -32,7 +30,7 @@ public class SuperHero implements Individual<Genome<Double>> {
     @Override
     public void mutate() {
 
-        strategy.getMutation().accept(this);
+        this.setGenome(strategy.getMutation().apply(this).getGenome());
     }
 
     @Override
