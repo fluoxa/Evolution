@@ -1,6 +1,5 @@
 package de.baleipzig.population;
 
-import com.sun.org.glassfish.external.statistics.Statistic;
 import de.baleipzig.configuration.PopulationConfig;
 import de.baleipzig.configuration.strategies.Strategy;
 import de.baleipzig.individual.Individual;
@@ -8,6 +7,7 @@ import de.baleipzig.individual.Parents;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
@@ -64,7 +64,6 @@ public class Avengers implements Population {
 
         individuals.addAll(children);
 
-        // testen, ob genome tatsächlich mutiert wird
         individuals.forEach(Individual::mutate);
 
         individuals = selectNaturally(individuals);

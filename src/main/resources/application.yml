@@ -1,9 +1,9 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 2000
+      evolutionCycles: 1000
       deterministicRandomParentRation: 0.9
-      rankRandomRatioNaturalSelection: 0.5
+      rankRandomRatioNaturalSelection: 0.75
       genomeConfig:
         numberOfGenes: 15
         lowerBound: -512
