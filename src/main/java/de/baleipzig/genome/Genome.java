@@ -10,4 +10,6 @@ public interface Genome<T> {
 
     T getAllele(int pos);
     void setAllele(int pos, T val);
+
+    void setAlleles(List<T> alleles);
 }

@@ -30,7 +30,7 @@ public class SuperHero implements Individual<Genome<Double>> {
     @Override
     public void mutate() {
 
-        strategy.getMutation().accept(this);
+        this.setGenome(strategy.getMutation().apply(this).getGenome());
     }
 
     @Override

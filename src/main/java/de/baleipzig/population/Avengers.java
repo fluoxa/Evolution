@@ -64,7 +64,6 @@ public class Avengers implements Population {
 
         individuals.addAll(children);
 
-        // testen, ob genome tatsächlich mutiert wird
         individuals.forEach(Individual::mutate);
 
         individuals = selectNaturally(individuals);

@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 import java.util.function.BiFunction;
-import java.util.function.Consumer;
 import java.util.function.Function;
 
 @Data
@@ -17,6 +16,6 @@ import java.util.function.Function;
 public class Strategy {
     private final Function<Population, Parents> parentSelection;
     private final BiFunction<List<Individual>, Integer, List<Individual>> naturalSelection;
-    private final Consumer<Individual<Genome<Double>>> mutation;
+    private final Function<Individual<Genome<Double>>, Individual<Genome<Double>>> mutation;
     private final GenomeRecombination.GenomeRecombinationFunction genomeCrossing;
 }

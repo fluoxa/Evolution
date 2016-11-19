@@ -4,6 +4,7 @@ import de.baleipzig.configuration.GenomeConfig;
 import lombok.Getter;
 import lombok.ToString;
 
+import java.util.List;
 import java.util.Random;
 import java.util.Vector;
 
@@ -51,5 +52,16 @@ public class DoubleGenome implements Genome<Double> {
         }
 
         alleles.set(pos, value);
+    }
+
+    @Override
+    public void setAlleles(List<Double> newAlleles) {
+
+        if(newAlleles.size() != alleles.size()) {
+            throw new RuntimeException("setAlleles: genomeSize unequal to new list size");
+        }
+
+        alleles.clear();
+        alleles.addAll(newAlleles);
     }
 }

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 public class EvoConfig {
 
     private int evolutionCycles;
+    private double deterministicRandomParentRation;
+    private double rankRandomRatioNaturalSelection;
     private GenomeConfig genomeConfig;
     private PopulationConfig populationConfig;
 }

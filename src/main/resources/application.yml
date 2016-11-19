@@ -1,15 +1,17 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 100
+      evolutionCycles: 1000
+      deterministicRandomParentRation: 0.9
+      rankRandomRatioNaturalSelection: 0.75
       genomeConfig:
-        numberOfGenes: 2
+        numberOfGenes: 15
         lowerBound: -512
         upperBound: 511
-        mutationRate: 0.75
-        mutationMaxLength: 25
+        mutationRate: 0.3
+        mutationMaxLength: 5
       populationConfig:
-        populationSize: 40
+        populationSize: 15
         childrenGenerationSize: 5
     example:
       exampleString: foo

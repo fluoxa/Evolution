@@ -10,38 +10,33 @@ import java.util.function.Supplier;
 
 public class NaturalSelection {
 
-    public static final BiFunction<List<Individual>, Integer, List<Individual>> RANDOM_SELECTION = (individuals, populationSize) -> {
+    public static final BiFunction<List<Individual>, Integer, List<Individual>> rankRandomSelectionFactory(double rankRandomRation) {
 
-        Collections.shuffle(individuals);
-        individuals = individuals.subList(0, populationSize);
-        return individuals;
-    };
+        return (candidates, populationSize) -> {
 
-    public static final BiFunction<List<Individual>, Integer, List<Individual>> RANK_RANDOM_SELECTION = (candidates, populationSize) -> {
+            List<Individual> selectedIndividuals = new ArrayList<>(populationSize);
+            List<Individual> remainingCandidates = new ArrayList<>(candidates);
 
-        List<Individual> selectedIndividuals = new ArrayList<>(populationSize);
+            Collections.sort(remainingCandidates, Collections.reverseOrder());
 
-        List<Individual> remainingCandidates = new ArrayList<>(candidates);
+            Supplier<Individual> rankStrategy = () -> {
+                Individual candidate = remainingCandidates.get(getRankBasedIndex(remainingCandidates.size()));
+                remainingCandidates.remove(candidate);
+                return candidate;
+            };
 
-        Collections.sort(remainingCandidates, Collections.reverseOrder());
+            Supplier<Individual> shuffleStrategy = () -> {
+                Individual candidate = remainingCandidates.get((int) (remainingCandidates.size() * Math.random()));
+                remainingCandidates.remove(candidate);
+                return candidate;
+            };
 
-        Supplier<Individual> rankStrategy = () -> {
-            Individual candidate = remainingCandidates.get(getRankBasedIndex(remainingCandidates.size()));
-            remainingCandidates.remove(candidate);
-            return candidate;
+            fillListUpTo(selectedIndividuals, (int) (populationSize*rankRandomRation), rankStrategy);
+            fillListUpTo(selectedIndividuals, populationSize, shuffleStrategy);
+
+            return selectedIndividuals;
         };
-
-        Supplier<Individual> shuffleStrategy = () -> {
-            Individual candidate = remainingCandidates.get((int) (remainingCandidates.size() * Math.random()));
-            remainingCandidates.remove(candidate);
-            return candidate;
-        };
-
-        fillListUpTo(selectedIndividuals, populationSize/2, rankStrategy);
-        fillListUpTo(selectedIndividuals, populationSize, shuffleStrategy);
-
-        return selectedIndividuals;
-    };
+    }
 
     private static int getRankBasedIndex(int populationSize) {
 
