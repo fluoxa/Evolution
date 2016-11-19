@@ -48,7 +48,7 @@ public class IocConfig {
                 Mutation.getAgeBasedMutationStrategyWithDecreasingMutationValue(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
-        selectedStrategy = constMutationDeterministicParentSelection;
+        selectedStrategy = constMutationMixedParentSelection;
     }
 
     @Bean
