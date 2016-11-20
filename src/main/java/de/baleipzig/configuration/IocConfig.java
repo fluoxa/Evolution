@@ -32,12 +32,12 @@ public class IocConfig {
     public IocConfig(EvoConfig evoConfig) {
         this.evoConfig = evoConfig;
 
-        constMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
+        constMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRatio()),
                 NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
                 Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
-        ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRation()),
+        ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRatio()),
                 NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
                 Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
@@ -48,7 +48,17 @@ public class IocConfig {
                 Mutation.getAgeBasedMutationStrategyWithDecreasingMutationValue(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
-        selectedStrategy = constMutationDeterministicParentSelection;
+        switch (evoConfig.getTasksConfig().getStrategy()) {
+            case "constMutationMixedParentSelection":
+                selectedStrategy = constMutationMixedParentSelection;
+                break;
+            case "ageBasedMutationRandomParentSelection":
+                selectedStrategy = ageBasedMutationRandomParentSelection;
+                break;
+            default:
+                selectedStrategy = caroTimStrategy;
+                break;
+        }
     }
 
     @Bean

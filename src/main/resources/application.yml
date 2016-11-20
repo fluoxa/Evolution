@@ -1,18 +1,28 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 1000
-      deterministicRandomParentRation: 0.9
+      evolutionCycles: 2
+      deterministicRandomParentRatio: 0.9
       rankRandomRatioNaturalSelection: 0.75
       genomeConfig:
-        numberOfGenes: 15
+        numberOfGenes: 10
         lowerBound: -512
         upperBound: 511
         mutationRate: 0.3
         mutationMaxLength: 5
       populationConfig:
         populationSize: 15
-        childrenGenerationSize: 5
+        childrenGenerationSize: 20
+      tasksConfig:
+        consideredGriewankDimensions:
+          - 2
+          - 8
+          - 18
+          - 36
+        numberOfSamplingPoints: 10
+        runsPerDataPoint: 10
+        outputPath: /home/sonny/Dokumente/studium/EvoAlg
+        strategy: constMutationMixedParentSelection
     example:
       exampleString: foo
       exampleBoolean: true

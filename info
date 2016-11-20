@@ -15,7 +15,7 @@ Für Minimierungsproblem 1 bei unterschiedlichen Dimensionen des Grundraumes
 - Untersuchung des Einflusses der Mutation bei konstanter mutationsrate vs. altersabhängiger Mutation (rate umso höher je älter)
 - Elternselektion: (1) zufällig
                    (2) deterministisch (nur die besten 20% dürfen sich fortpflanzen: deren paarung ist dann zufällig)
-                   (3) mixed: 50% deterministisch + 50% zufällig
+                   (3) variable zwischen (1) und (2) durchfahren (müssen genügend kinder erzeugt werden, damit zusammensetzung überhaupt ins gewicht fällt!)
 
 In Summe: sechs zu untersuchende Szenarien, wobei jedes Szenarium für unterschiedliche Dimensionen getestet wird.
 

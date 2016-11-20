@@ -10,7 +10,7 @@ import java.util.function.Supplier;
 
 public class NaturalSelection {
 
-    public static final BiFunction<List<Individual>, Integer, List<Individual>> rankRandomSelectionFactory(double rankRandomRation) {
+    public static final BiFunction<List<Individual>, Integer, List<Individual>> rankRandomSelectionFactory(double rankRandomRatio) {
 
         return (candidates, populationSize) -> {
 
@@ -31,7 +31,7 @@ public class NaturalSelection {
                 return candidate;
             };
 
-            fillListUpTo(selectedIndividuals, (int) (populationSize*rankRandomRation), rankStrategy);
+            fillListUpTo(selectedIndividuals, (int) (populationSize*rankRandomRatio), rankStrategy);
             fillListUpTo(selectedIndividuals, populationSize, shuffleStrategy);
 
             return selectedIndividuals;
