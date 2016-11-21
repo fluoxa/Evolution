@@ -22,7 +22,7 @@ de:
           - 32
         numberOfSamplingPoints: 20
         runsPerDataPoint: 20
-        outputPath: /home/sonny/Dokumente/studium/EvoAlg
+        outputPath: D:\evoresults\
         strategy: constMutationMixedParentSelection # nach finden der besten parameterkonfiguration (s.o.) auch noch für diese für die ageBasedMutation
     example:
       exampleString: foo
@@ -48,3 +48,84 @@ de:
       exampleMapWithString:
         entryOne: foo
         entryTwo: foo2
+---
+spring:
+    profiles: eins
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.9 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.1  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: zwei
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.9 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.3  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: drei
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.9 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: vier
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.75 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.1  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: fuenf
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.75 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.3  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: sechs
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.75 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: sieben
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.5 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.1  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: acht
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.5 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.3  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: neun
+de:
+  baleipzig:
+    evoconfig:
+      rankRandomRatioNaturalSelection: 0.5 # hier vielleicht für die werte 0.9, 0.75, 0.5
+      genomeConfig:
+        mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5

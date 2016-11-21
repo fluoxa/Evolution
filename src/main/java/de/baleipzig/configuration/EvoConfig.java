@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @EnableConfigurationProperties
-@ConfigurationProperties(locations="classpath:Application.yml", prefix="de.baleipzig.evoconfig")
+@ConfigurationProperties(locations="classpath:Application.yml", prefix="de.baleipzig.evoconfig", merge = true)
 public class EvoConfig {
 
     private int maxGenerations;

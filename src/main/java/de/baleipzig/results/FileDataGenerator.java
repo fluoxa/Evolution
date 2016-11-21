@@ -1,5 +1,6 @@
 package de.baleipzig.results;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.baleipzig.configuration.EvoConfig;
 import de.baleipzig.configuration.TasksConfig;
 import de.baleipzig.population.Population;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -46,7 +48,30 @@ public class FileDataGenerator {
         saveData();
     }
 
+    private String createOutputPath() {
+        String path = evoConfig.getTasksConfig().getOutputPath()
+                + "ratio" + evoConfig.getRankRandomRatioNaturalSelection()
+                + "mutationRate" + evoConfig.getGenomeConfig().getMutationRate();
+
+        return path;
+    }
+
     private void init(String strategy) {
+
+        File directory = new File(createOutputPath());
+
+        if(directory.exists()) {
+            directory.delete();
+        }
+
+        directory.mkdirs();
+
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(createOutputPath()+"/evoConfig.json"), evoConfig);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         TasksConfig tasksConfig = evoConfig.getTasksConfig();
         tasksConfig.setStrategy(strategy);
@@ -174,7 +199,7 @@ public class FileDataGenerator {
         }
 
         try {
-            PrintWriter writer = new PrintWriter(evoConfig.getTasksConfig().getOutputPath()+"/results.dat", "UTF-8");
+            PrintWriter writer = new PrintWriter(createOutputPath()+"/results.dat", "UTF-8");
             writer.printf(sb.toString());
             writer.close();
         }
