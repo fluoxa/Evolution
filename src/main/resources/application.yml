@@ -1,28 +1,25 @@
 de:
   baleipzig:
     evoconfig:
-      evolutionCycles: 2
+      maxGenerations: 3000
       deterministicRandomParentRatio: 0.9
-      rankRandomRatioNaturalSelection: 0.75
+      rankRandomRatioNaturalSelection: 0.75 # hier vielleicht für die werte 0.9, 0.75, 0.5
       genomeConfig:
         numberOfGenes: 10
         lowerBound: -512
         upperBound: 511
-        mutationRate: 0.3
+        mutationRate: 0.3  # hier vielleicht für die werte 0.01, 0.1, 0.3
         mutationMaxLength: 5
       populationConfig:
-        populationSize: 15
+        populationSize: 16
         childrenGenerationSize: 20
       tasksConfig:
         consideredGriewankDimensions:
-          - 2
-          - 8
-          - 18
-          - 36
-        numberOfSamplingPoints: 10
+          - 4
+        numberOfSamplingPoints: 20
         runsPerDataPoint: 10
         outputPath: /home/sonny/Dokumente/studium/EvoAlg
-        strategy: constMutationMixedParentSelection
+        strategy: constMutationMixedParentSelection # nach finden der besten parameterkonfiguration (s.o.) auch noch für diese für die ageBasedMutation
     example:
       exampleString: foo
       exampleBoolean: true

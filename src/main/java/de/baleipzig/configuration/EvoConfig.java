@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(locations="classpath:Application.yml", prefix="de.baleipzig.evoconfig")
 public class EvoConfig {
 
-    private int evolutionCycles;
+    private int maxGenerations;
     private double deterministicRandomParentRatio;
     private double rankRandomRatioNaturalSelection;
     private GenomeConfig genomeConfig;

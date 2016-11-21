@@ -85,6 +85,8 @@ public class FileDataGenerator {
             int listNumber = dimPosPair.getValue();
             calcDataForSingleEvolutionCycle(listNumber);
         }
+
+        System.out.println("Calculation done for number of genes: " + dimPosPair.getKey());
     }
 
     private void calcDataForSingleEvolutionCycle(int listNumber) {
@@ -99,7 +101,9 @@ public class FileDataGenerator {
 
             int cycle;
 
-            for (cycle = 0; cycle < evoConfig.getEvolutionCycles(); cycle++) {
+            System.out.printf("%s Generation:", run);
+
+            for (cycle = 0; cycle < evoConfig.getMaxGenerations(); cycle++) {
                 avengers.createNextGeneration();
 
                 Statistic statistic = avengers.createStatistic();
@@ -107,7 +111,13 @@ public class FileDataGenerator {
                 if (statistic.getStandardDeviation() < 0.0001 || Math.abs(statistic.getBestFitness()) < 0.0001) {
                     break;
                 }
+
+                if(cycle % 250 == 0) {
+                    System.out.printf(" %s", cycle);
+                }
             }
+
+            System.out.println("");
 
             resultStatistic.addValue(avengers.getFittestIndividual().getFitness());
             cycleStatistic.addValue(cycle);
@@ -125,6 +135,22 @@ public class FileDataGenerator {
         int maxLineNumber = resultList.get(0).size();
         int numberOfConsideredCases = resultList.size();
 
+        String header = "";
+
+        for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
+
+            header = String.format("%sratio; opt_%s; err_%s; ratio; generations_%s; err_%s; ",
+                    header,
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase)
+            );
+        }
+
+        sb.append(header);
+        sb.append('\n');
+
         for(int lineNumber = 0; lineNumber < maxLineNumber; lineNumber++) {
 
             String line = "";
@@ -134,7 +160,7 @@ public class FileDataGenerator {
                 line = String.format("%s%.3f; %.3f; %.3f; %.3f; %.3f; %.3f; ",
                         line,
                         resultList.get(crtCase).get(lineNumber).getKey(),
-                        resultList.get(crtCase).get(lineNumber).getValue(),
+                        -resultList.get(crtCase).get(lineNumber).getValue(),
                         resultErrorList.get(crtCase).get(lineNumber),
                         cycleList.get(crtCase).get(lineNumber).getKey(),
                         cycleList.get(crtCase).get(lineNumber).getValue(),
