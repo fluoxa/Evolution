@@ -73,12 +73,13 @@ public class FileDataGenerator {
     }
 
     private void calcDataForGriewankDimension(Map.Entry<Integer, Integer> dimPosPair) {
-
+        System.out.printf("Dimension %s\n", dimPosPair.getKey());
         evoConfig.getGenomeConfig().setNumberOfGenes(dimPosPair.getKey());
 
         int samplingPoints = evoConfig.getTasksConfig().getNumberOfSamplingPoints();
 
         for (int count = 0; count < samplingPoints+1; count++) {
+            System.out.printf("ParentRatio %1.2f\n", 0 + ((double) count) / ((double) samplingPoints));
 
             evoConfig.setDeterministicRandomParentRatio(0 + ((double) count) / ((double) samplingPoints));
 
@@ -101,7 +102,7 @@ public class FileDataGenerator {
 
             int cycle;
 
-            System.out.printf("%s Generation:", run);
+            System.out.printf("Durchlauf %s Generation:", run);
 
             for (cycle = 0; cycle < evoConfig.getMaxGenerations(); cycle++) {
                 avengers.createNextGeneration();
