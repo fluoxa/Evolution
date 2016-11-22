@@ -38,16 +38,18 @@ public class Mutation {
         };
     }
 
-    public static Function<Individual<Genome<Double>>, Individual<Genome<Double>>> getAgeBasedRateMutationStrategy(GenomeConfig config)  {
+    public static Function<Individual<Genome<Double>>, Individual<Genome<Double>>> getAgeBasedIncreasingMutationStrategy(GenomeConfig config)  {
         return individual -> {
-            individual.getGenome().setAlleles(mutateDoubleGenome(config, individual, config.getMutationRate() * Math.sqrt(individual.getAge())));
+            //(1+log(1+age)/3)
+            individual.getGenome().setAlleles(mutateDoubleGenome(config, individual, config.getMutationRate() * (1+Math.log(1+individual.getAge()))/3));
             return individual;
         };
     }
 
-    public static Function<Individual<Genome<Double>>, Individual<Genome<Double>>> getAgeBasedMutationStrategyWithDecreasingMutationValue(GenomeConfig config)  {
+    public static Function<Individual<Genome<Double>>, Individual<Genome<Double>>> getAgeBasedDecreasingMutationStrategy(GenomeConfig config)  {
         return individual -> {
-            individual.getGenome().setAlleles(mutateDoubleGenome(config, individual, config.getMutationRate() * Math.sqrt(individual.getAge())));
+            //mutationrate/(1+age)
+            individual.getGenome().setAlleles(mutateDoubleGenome(config, individual, config.getMutationRate() / (1+individual.getAge())));
             return individual;
         };
     }

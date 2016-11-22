@@ -24,7 +24,9 @@ public class IocConfig {
     @Getter
     private final Strategy constMutationMixedParentSelection;
     @Getter
-    private final Strategy ageBasedMutationRandomParentSelection;
+    private final Strategy ageBasedIncreasingMutationMixedParentSelection;
+    @Getter
+    private final Strategy ageBasedDecreasingMutationMixedParentSelection;
     @Getter
     private final Strategy caroTimStrategy;
 
@@ -37,27 +39,34 @@ public class IocConfig {
                 Mutation.getConstantRateMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
-        ageBasedMutationRandomParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRatio()),
+        ageBasedIncreasingMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRatio()),
                 NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
-                Mutation.getAgeBasedRateMutationStrategy(evoConfig.getGenomeConfig()),
+                Mutation.getAgeBasedIncreasingMutationStrategy(evoConfig.getGenomeConfig()),
+                GenomeRecombination.INTERMEDIATE_RECOMBINATION);
+
+        ageBasedDecreasingMutationMixedParentSelection = new Strategy(ParentSelection.mixedParentSelectionFactory(evoConfig.getDeterministicRandomParentRatio()),
+                NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
+                Mutation.getAgeBasedDecreasingMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
         caroTimStrategy = new Strategy(
                 ParentSelection.mixedParentSelectionFactory(0.),
                 NaturalSelection.rankRandomSelectionFactory(evoConfig.getRankRandomRatioNaturalSelection()),
-                Mutation.getAgeBasedMutationStrategyWithDecreasingMutationValue(evoConfig.getGenomeConfig()),
+                Mutation.getAgeBasedDecreasingMutationStrategy(evoConfig.getGenomeConfig()),
                 GenomeRecombination.INTERMEDIATE_RECOMBINATION);
 
         switch (evoConfig.getTasksConfig().getStrategy()) {
             case "constMutationMixedParentSelection":
                 selectedStrategy = constMutationMixedParentSelection;
                 break;
-            case "ageBasedMutationRandomParentSelection":
-                selectedStrategy = ageBasedMutationRandomParentSelection;
+            case "ageBasedIncreasingMutationMixedParentSelection":
+                selectedStrategy = ageBasedIncreasingMutationMixedParentSelection;
+                break;
+            case "ageBasedDecreasingMutationMixedParentSelection":
+                selectedStrategy = ageBasedDecreasingMutationMixedParentSelection;
                 break;
             default:
-                selectedStrategy = caroTimStrategy;
-                break;
+                throw new RuntimeException(evoConfig.getTasksConfig().getStrategy() + "not found");
         }
     }
 
