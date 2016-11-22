@@ -77,7 +77,11 @@ public class FileDataGenerator {
         }
 
         TasksConfig tasksConfig = evoConfig.getTasksConfig();
-        tasksConfig.setStrategy(strategy);
+
+        if(strategy != null && !strategy.isEmpty()) {
+            tasksConfig.setStrategy(strategy);
+        }
+
 
         resultList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
         resultErrorList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
@@ -206,6 +210,9 @@ public class FileDataGenerator {
             writer.printf(sb.toString());
             writer.close();
         }
-        catch( IOException ex){}
+        catch( IOException ex){
+            System.out.println(ex);
+        }
+
     }
 }

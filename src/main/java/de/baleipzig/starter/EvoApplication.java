@@ -13,6 +13,6 @@ public class EvoApplication {
 
     public void start() {
 
-        fileDataGenerator.generateData("constMutationMixedParentSelection");
+        fileDataGenerator.generateData(null);
     }
 }
