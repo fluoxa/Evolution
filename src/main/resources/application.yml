@@ -21,7 +21,7 @@ de:
           - 16
           - 32
         numberOfSamplingPoints: 20
-        runsPerDataPoint: 20
+        runsPerDataPoint: 50
         outputPath: D:\evoresults\
         strategy: constMutationMixedParentSelection # nach finden der besten parameterkonfiguration (s.o.) auch noch für diese für die ageBasedMutation
     example:
