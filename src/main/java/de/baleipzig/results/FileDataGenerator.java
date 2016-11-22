@@ -51,7 +51,9 @@ public class FileDataGenerator {
     private String createOutputPath() {
         String path = evoConfig.getTasksConfig().getOutputPath()
                 + "ratio" + evoConfig.getRankRandomRatioNaturalSelection()
-                + "mutationRate" + evoConfig.getGenomeConfig().getMutationRate();
+                + "mutationRate" + evoConfig.getGenomeConfig().getMutationRate()
+                + "popSize" + evoConfig.getPopulationConfig().getPopulationSize()
+                + "childrenSize" + evoConfig.getPopulationConfig().getChildrenGenerationSize();
 
         return path;
     }

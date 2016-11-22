@@ -3,12 +3,12 @@ de:
     evoconfig:
       maxGenerations: 3000
       deterministicRandomParentRatio: 0.9
-      rankRandomRatioNaturalSelection: 0.9 #hier vielleicht für die werte 0.9, 0.75, 0.5
+      rankRandomRatioNaturalSelection: 0.5 #hier vielleicht für die werte 0.9, 0.75, 0.5
       genomeConfig:
         numberOfGenes: 10
         lowerBound: -512
         upperBound: 511
-        mutationRate: 0.1  # hier vielleicht für die werte 0.1, 0.3, 0.5
+        mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5
         mutationMaxLength: 5
       populationConfig:
         populationSize: 16
@@ -129,3 +129,30 @@ de:
       rankRandomRatioNaturalSelection: 0.5 # hier vielleicht für die werte 0.9, 0.75, 0.5
       genomeConfig:
         mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5
+---
+spring:
+    profiles: popEins
+de:
+  baleipzig:
+    evoconfig:
+      populationConfig:
+        populationSize: 40
+        childrenGenerationSize: 50
+---
+spring:
+    profiles: popZwei
+de:
+  baleipzig:
+    evoconfig:
+      populationConfig:
+        populationSize: 80
+        childrenGenerationSize: 100
+---
+spring:
+    profiles: popDrei
+de:
+  baleipzig:
+    evoconfig:
+      populationConfig:
+        populationSize: 120
+        childrenGenerationSize: 150
