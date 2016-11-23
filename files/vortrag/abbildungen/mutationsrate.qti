@@ -1,0 +1,150 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	2
+<table>
+Tabelle1	31	4	22.11.16 16:47
+geometry	0	0	675	396	
+header	1[X]	2[Y]	3[Y]	4[Y]
+ColWidth	100	100	100	100	
+<com>
+<col nr="1">
+0.5
+</col>
+<col nr="2">
+(1+log10(1+col("1"))/3)*0.5
+</col>
+<col nr="3">
+0.5/(1+col("1"))
+</col>
+</com>
+ColType	0;0/3	0;0/3	0;0/3	0;0/3
+ReadOnlyColumn	0	0	0	0
+HiddenColumn	0	0	0	0
+Comments					
+WindowLabel		2
+<data>
+0	0	0.5	0.5	0.5
+1	1	0	0.55	0.25
+2	2	0	0.58	0.167
+3	3	0	0.6	0.125
+4	4	0	0.616	0.1
+5	5	0	0.63	0.0833
+6	6	0	0.641	0.0714
+7	7	0	0.651	0.0625
+8	8	0	0.659	0.0556
+9	9	0	0.667	0.05
+10	10	0	0.674	0.0455
+11	11	0	0.68	0.0417
+12	12	0	0.686	0.0385
+13	13	0	0.691	0.0357
+14	14	0	0.696	0.0333
+15	15	0	0.701	0.0312
+16	16	0	0.705	0.0294
+17	17	0	0.709	0.0278
+18	18	0	0.713	0.0263
+19	19	0	0.717	0.025
+20	20	0	0.72	0.0238
+21	21	0	0.724	0.0227
+22	22	0	0.727	0.0217
+23	23	0	0.73	0.0208
+24	24	0	0.733	0.02
+25	25	0	0.736	0.0192
+26	26	0	0.739	0.0185
+27	27	0	0.741	0.0179
+28	28	0	0.744	0.0172
+29	29	0	0.746	0.0167
+30	30	0	0.749	0.0161
+</data>
+</table>
+<multiLayer>
+Grafik1	1	1	22.11.16 16:56
+geometry	772	48	486	413	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	468	350
+<PageGeometry>0.0104603	0.0136986	0.979079	0.958904</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Alter a	Mutationsrate m		 	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	11	50	0	0	0
+ScaleFont0	Ubuntu	11	75	0	0	0
+ScaleFont1	Ubuntu	11	75	0	0	0
+ScaleFont2	Ubuntu	11	75	0	0	0
+ScaleFont3	Ubuntu	11	75	0	0	0
+AxisFont0	Ubuntu	11	50	0	0	0
+AxisFont1	Ubuntu	11	50	0	0	0
+AxisFont2	Ubuntu	11	50	0	0	0
+AxisFont3	Ubuntu	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Tabelle1_1	Tabelle1_4	2	1	#000000	0	1	5	1	#000000	#000000	0	#000000	14	1	2	0	0	30	1
+curve	Tabelle1_1	Tabelle1_3	2	1	#ff0000	0	1	5	2	#ff0000	#ff0000	0	#000000	14	1	2	0	0	30	1
+curve	Tabelle1_1	Tabelle1_2	2	1	#00ff00	0	1	7	4	#00ff00	#00ff00	0	#000000	14	1	2	0	0	30	1
+scale	0	-0.05	1	0	6	3	0	0
+scale	1	-0.05	1	0	6	3	0	0
+scale	2	0	30	0	7	4	0	0
+scale	3	0	30	0	7	4	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.67669172932331</x>
+<y>0.96321070234114</y>
+<right>9.58579881656805</right>
+<bottom>0.859259259259259</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)m(a) = 0.5 / (1+a)
+\l(2)m(a) = 0.5 (1+log(1+a)/3)
+\l(3)   m(a) = 0.5 δ<sub>a 0</sub>
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>
