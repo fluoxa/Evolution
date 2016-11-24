@@ -128,21 +128,37 @@ Berufsakademie Leipzig
 	\hspace{-0.25cm}
 	\begin{picture}(0,150)%
 		\only<1->{\put(0,0){\includegraphics[width=0.9\linewidth]{abbildungen/algorithm.png}}}%
-		\only<2->{\put(130,45){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{%
+		\only<2->{\put(130,75){\color{alert}\parbox{4cm}{%
 		    \begin{align*} 
 			F^\text{min} & < 10^{-4} \\[-0.2cm]
 			 \sigma_{F}  & < 10^{-4} \\[-0.1cm]
 			   gen 	     & > 3000
 		    \end{align*}}
-		}}}%
-		\only<3-6>{\put(200, 145){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}}%
-		\only<4->{\put(280, 110){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{intermedi"ar}}}}%
-		\only<5-6>{\put(260, 0){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{zeitlich konstant,\newline altersabh"angig}}}}%
-		\only<6->{\put(165, -27){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}}%
-		\only<7>{\put(200, 145){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}}%
-		\only<7>{\put(260, 0){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabh"angig}}}}}%
+		}}
+		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}%
+		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermedi"ar}}}%
+		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabh"angig}}}%
+		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
+		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}
+		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabh"angig}}}}
 
 	\end{picture}%
+
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Elternselektion detailiert} 
+
+    \adjustbox{valign=t}{%
+	\begin{minipage}[t]{0.68\linewidth}
+			testbild
+	\end{minipage}%
+    }
+    \begin{minipage}[t]{0.3\linewidth}
+	\begin{itemize}
+	    \item test
+	\end{itemize}
+    \end{minipage}
 
 \end{frame}
 
@@ -154,61 +170,61 @@ Berufsakademie Leipzig
 
 		\only<1->{
 		    \put(20,50){\includegraphics[width=0.7\linewidth]{abbildungen/Genom1.png}}%
-		    \put(0,80){\makebox(0,0)[lb]{\parbox{4cm}{\Large \textbf{Genome:}}}}%
-		    \put(26,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{1}$}}}%
-		    \put(45,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(0,80){\parbox{4cm}{\Large \textbf{Genom:}}}%
+		    \put(26,55){\parbox{4cm}{$g_{1}$}}%
+		    \put(45,55){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,55){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,55){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,55){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,55){\parbox{4cm}{$g_{6}$}}%
 
 
 		    \put(29,2){\includegraphics[height=1.5cm]{abbildungen/arrow.png}}%
 
-		    \put(10, -2){\makebox(0,0)[lb]{\parbox{6cm}{%
+		    \put(10, 23){\parbox{6cm}{%
 			\begin{align*}%
 			    \tilde{g}_{1}\! = & \; rnd()\! <\! m(a)\, ? \\ 
 					       & \;(g_{1}\! +\! M_\text{rnd})\, :\, g_{1};
-			\end{align*}}}}%
+			\end{align*}}}%
 		}
 		\only<1>{
 		    \put(20,-20){\includegraphics[width=0.7\linewidth]{abbildungen/Genom.png}}%
-		    \put(26,-15){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-15){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-15){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,-15){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-15){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-15){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-15){\parbox{4cm}{$g_{6}$}}%
 
 		}
 		\only<2->{
 		    \put(20,-20){\includegraphics[width=0.7\linewidth]{abbildungen/Genom2.png}}%
 		
-		    \put(26,-15){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-15){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-15){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,-15){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-15){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-15){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-15){\parbox{4cm}{$g_{6}$}}%
 
 		    \put(49,-68){\includegraphics[height=1.5cm]{abbildungen/arrow.png}}%
 
-		    \put(30, -73){\makebox(0,0)[lb]{\parbox{6cm}{%
+		    \put(30, -48){\parbox{6cm}{%
 			\begin{align*}%
 			    \tilde{g}_{2}\! = & \; rnd()\! <\! m(a)\, ? \\ 
 					       & \;(g_{2}\! +\! M_\text{rnd})\, :\, g_{2};
-			\end{align*}}}}%
+			\end{align*}}}%
 
 
 		    \put(20,-90){\includegraphics[width=0.7\linewidth]{abbildungen/Genom3.png}}%
-		    \put(26,-85){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-85){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{2}$}}}%
-		    \put(65,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-85){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-85){\parbox{4cm}{$\tilde{g}_{2}$}}%
+		    \put(65,-85){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-85){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-85){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-85){\parbox{4cm}{$g_{6}$}}%
 
-		    \put(74,-115){\makebox(0,0)[lb]{\parbox{4cm}{ \Large \textbf{...}}}}%
+		    \put(74,-115){\parbox{4cm}{ \Large \textbf{...}}}%
 		}
 	    \end{picture}%
 	\end{minipage}
@@ -217,7 +233,7 @@ Berufsakademie Leipzig
 		\vspace{-0.7cm}
 		$rnd() \in [0,1]$ \\ $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\[0.2cm]
 		$m(a)$ \\ $^{}$ \hspace{0.2cm} ... (altersabhg.) Mutationsrate\\[0.2cm]
-		$M_\text{rnd} \in [0,5]$ \\  $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\
+		$\textcolor{alert}{M_\text{rnd} \in [-5,5]}$ \\  $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\
 	\end{minipage}
 	
 \end{frame}
@@ -246,22 +262,6 @@ Berufsakademie Leipzig
     \begin{center}
 	\LARGE{Konstante Mutationsrate}
     \end{center}
-\end{frame}
-
-% Framebeginn...%
-\begin{frame}\frametitle{Elternselektion detailiert} 
-
-    \adjustbox{valign=t}{%
-	\begin{minipage}[t]{0.68\linewidth}
-	    \includegraphics[width=8cm]{abbildungen/test.pdf}
-	\end{minipage}%
-    }
-    \begin{minipage}[t]{0.3\linewidth}
-	\begin{itemize}
-	    \item test
-	\end{itemize}
-    \end{minipage}
-
 \end{frame}
 
 \begin{frame}\frametitle{Optimale Fitnesswerte f"ur $n = 2$} 
