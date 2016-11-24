@@ -3,17 +3,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
-\usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
-\usepackage{amstext}          % für Klartext via \text{} in Formeln
-\usepackage{amsfonts}         % für komplexere Formeln (Mengensymbole ...)
-\usepackage{amssymb}          % für komplexere Formeln (Mengensymbole ...)
+\usepackage{amsmath}  		  % fï¿½r erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
+\usepackage{amstext}          % fï¿½r Klartext via \text{} in Formeln
+\usepackage{amsfonts}         % fï¿½r komplexere Formeln (Mengensymbole ...)
+\usepackage{amssymb}          % fï¿½r komplexere Formeln (Mengensymbole ...)
 \usepackage{graphicx} 		  % Einbindung von Grafiken (pdf, png, jpg)
 \usepackage{dsfont}
 \usepackage{bm} 
 \usepackage{mathrsfs}
 \usepackage{setspace}
-\usepackage{enumerate}        % verbessert Aufzählungen
-\usepackage{array}            % für Tabellen: bindet tabular-Umgebung ein
+\usepackage{enumerate}        % verbessert Aufzï¿½hlungen
+\usepackage{array}            % fï¿½r Tabellen: bindet tabular-Umgebung ein
 \usepackage{multicol}         % zur Indexerstellung in zwei Spalten
 \usepackage{amsthm}
 \usepackage{tabularx}
@@ -149,16 +149,23 @@ Berufsakademie Leipzig
 % Framebeginn...%
 \begin{frame}\frametitle{Elternselektion detailiert} 
 
-    \adjustbox{valign=t}{%
-	\begin{minipage}[t]{0.68\linewidth}
-			testbild
-	\end{minipage}%
-    }
-    \begin{minipage}[t]{0.3\linewidth}
-	\begin{itemize}
-	    \item test
-	\end{itemize}
-    \end{minipage}
+	\begin{picture}(0,140)%
+	\only<1>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel0.png}}}%	
+	\only<2>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel1.png}}}%	
+	
+	\only<3-4>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel2.png}}}%	
+	
+	\only<1->{\put(0,160){\parbox{8cm}{\Large \textbf{Deterministische Selektion:}}}}%
+	\only<1-2>{\put(160, 135){\parbox{4cm}{\textbf{unsortiert}}}}%
+	\only<2>{\put(165, 20){\parbox{4cm}{\textbf{Fitness}}}}%
+	\only<2>{\put(70, 30){\parbox{4cm}{besser}}}%
+	\only<2>{\put(250, 30){\parbox{4cm}{schlechter}}}%
+	\only<3-4>{\put(165, 135){\parbox{4cm}{\textbf{Fitness}}}}%
+	\only<3-4>{\put(70, 142){\parbox{4cm}{besser}}}%
+	\only<3-4>{\put(250, 142){\parbox{4cm}{schlechter}}}%
+	\only<4>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
+	\only<4>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
+	\end{picture}%
 
 \end{frame}
 
@@ -273,7 +280,7 @@ Berufsakademie Leipzig
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    Ergebnisse altersabhängige Mutationsrate     %
+%    Ergebnisse altersabhï¿½ngige Mutationsrate     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Ergebnisse altersabh"angige Mutationsrate}
