@@ -87,7 +87,7 @@ item}##1}}%
 
 \beamertemplatenavigationsymbolsempty
 
-\title[EvoAlg]{Evolutionäre Algorithmen zur Minimierung der Griewank-Funktion}   
+\title[EvoAlg]{Evolutionï¿½re Algorithmen zur Minimierung der Griewank-Funktion}   
 \author[D. Gilgen, J.Zschoche]{Daniel Gilgen, Jan Zschoche}
 \institute[BA Leipzig]{
 Berufsakademie Leipzig
@@ -102,10 +102,10 @@ Berufsakademie Leipzig
     \vspace{1cm}
     \begin{enumerate}
 	\item \textbf{\large Einleitung}\\
-		Aufbau eines evolutionären Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
-	\item \textbf{\large Ergebnisse für konstante Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse für mit Alter wachsender Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse für mit Alter abnehmender Mutationsrate}\\
+		Aufbau eines evolutionï¿½ren Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
+	\item \textbf{\large Ergebnisse fï¿½r konstante Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse fï¿½r mit Alter wachsender Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse fï¿½r mit Alter abnehmender Mutationsrate}\\
     \end{enumerate}
 \end{frame}
 
@@ -137,12 +137,12 @@ Berufsakademie Leipzig
 			   gen 	     & > 3000
 		    \end{align*}}
 		}}
-		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}%
-		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}}%
-		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhängig}}}%
+		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline deterministisch}}}%
+		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediï¿½r}}}%
+		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhï¿½ngig}}}%
 		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
-		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}
-		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}}
+		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{deterministisch}}}}
+		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhï¿½ngig}}}}
 
 	\end{picture}%
 
@@ -162,11 +162,11 @@ Berufsakademie Leipzig
 	\only<2>{\put(165, 20){\parbox{4cm}{\textbf{Fitness}}}}%
 	\only<2>{\put(70, 30){\parbox{4cm}{besser}}}%
 	\only<2>{\put(250, 30){\parbox{4cm}{schlechter}}}%
-	\only<3-4>{\put(165, 135){\parbox{4cm}{\textbf{Fitness}}}}%
-	\only<3-4>{\put(70, 142){\parbox{4cm}{besser}}}%
-	\only<3-4>{\put(250, 142){\parbox{4cm}{schlechter}}}%
-	\only<4>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
-	\only<4>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
+	\only<3>{\put(165, 135){\parbox{4cm}{\textbf{Fitness}}}}%
+	\only<3>{\put(70, 142){\parbox{4cm}{besser}}}%
+	\only<3>{\put(250, 142){\parbox{4cm}{schlechter}}}%
+	\only<3>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
+	\only<3>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
 	\end{picture}%
 
 \end{frame}
@@ -266,17 +266,17 @@ Berufsakademie Leipzig
 			\left.
 			\begin{array}{cl}
 				(1) & \text{Initialisierung der Anfangs-}\\
-					& \text{population zufällig} \\[0.2cm]
+					& \text{population zufï¿½llig} \\[0.2cm]
 				(2) & \text{Umwelt- und Elternselektion }\\
-					& \text{in Teilen zufallsabhängig} \\[0.2cm]
-				(3) & \text{Mutation zufallsabhängig} \\
+					& \text{in Teilen zufallsabhï¿½ngig} \\[0.2cm]
+				(3) & \text{Mutation zufallsabhï¿½ngig} \\
 			\end{array}
 			\right\}\quad \parbox{4.cm}{\textbf{Minimum bei jeder\newline Berechnung anders} }
 		\end{equation*}
 	}
 
 	\only<2> {
-		\textbf{Lösung:}\\[-0.3cm]
+		\textbf{Lï¿½sung:}\\[-0.3cm]
 		\begin{center}
 			\begin{tabular}{c}
 				\textbf{50-fache} Minimum-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.1cm]
@@ -300,11 +300,11 @@ Berufsakademie Leipzig
     \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Optimale Fitnesswerte für $n = 2$} 
+\begin{frame}\frametitle{Optimale Fitnesswerte fï¿½r $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch fï¿½r $n = 2$} 
 
 \end{frame}
 
@@ -312,12 +312,12 @@ Berufsakademie Leipzig
 %    Ergebnisse altersabhï¿½ngige Mutationsrate     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ergebnisse altersabhängige Mutationsrate}
+\section{Ergebnisse altersabhï¿½ngige Mutationsrate}
 
 \begin{frame}
     
     \begin{center}
-	\LARGE{Altersabhängige Mutationsrate}
+	\LARGE{Altersabhï¿½ngige Mutationsrate}
     \end{center}
 
 \end{frame}
@@ -327,11 +327,11 @@ Berufsakademie Leipzig
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittleres Minimum für $n = 2$} 
+\begin{frame}\frametitle{Mittleres Minimum fï¿½r $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch fï¿½r $n = 2$} 
 
 \end{frame}
 
