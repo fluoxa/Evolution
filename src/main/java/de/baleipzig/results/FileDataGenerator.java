@@ -156,10 +156,8 @@ public class FileDataGenerator {
             cycleStatistic.addValue(cycle);
         }
 
-        resultList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(), resultStatistic.getMean()));
+        resultList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(), resultStatistic.getMax()));
         resultErrorList.get(listNumber).add(resultStatistic.getStandardDeviation());
-        cycleList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(),cycleStatistic.getMean()));
-        cycleErrorList.get(listNumber).add(cycleStatistic.getStandardDeviation());
     }
 
     private void saveData() {
@@ -172,13 +170,9 @@ public class FileDataGenerator {
 
         for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-            header = String.format("%sratio; opt_%s; err_%s; ratio; generations_%s; err_%s; ",
+            header = String.format("%sratio; opt_%s;",
                     header,
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase)
-            );
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase));
         }
 
         sb.append(header);
@@ -190,14 +184,10 @@ public class FileDataGenerator {
 
             for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-                line = String.format("%s%.3f; %.3f; %.3f; %.3f; %.3f; %.3f; ",
+                line = String.format("%s%.3f; %.3f;",
                         line,
                         resultList.get(crtCase).get(lineNumber).getKey(),
-                        -resultList.get(crtCase).get(lineNumber).getValue(),
-                        resultErrorList.get(crtCase).get(lineNumber),
-                        cycleList.get(crtCase).get(lineNumber).getKey(),
-                        cycleList.get(crtCase).get(lineNumber).getValue(),
-                        cycleErrorList.get(crtCase).get(lineNumber)
+                        -resultList.get(crtCase).get(lineNumber).getValue()
                         );
             }
 
@@ -213,6 +203,5 @@ public class FileDataGenerator {
         catch( IOException ex){
             System.out.println(ex);
         }
-
     }
 }
