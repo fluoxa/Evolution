@@ -3,17 +3,17 @@
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
-\usepackage{amsmath}  		  % fï¿½r erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
-\usepackage{amstext}          % fï¿½r Klartext via \text{} in Formeln
-\usepackage{amsfonts}         % fï¿½r komplexere Formeln (Mengensymbole ...)
-\usepackage{amssymb}          % fï¿½r komplexere Formeln (Mengensymbole ...)
+\usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
+\usepackage{amstext}          % für Klartext via \text{} in Formeln
+\usepackage{amsfonts}         % für komplexere Formeln (Mengensymbole ...)
+\usepackage{amssymb}          % für komplexere Formeln (Mengensymbole ...)
 \usepackage{graphicx} 		  % Einbindung von Grafiken (pdf, png, jpg)
 \usepackage{dsfont}
 \usepackage{bm} 
 \usepackage{mathrsfs}
 \usepackage{setspace}
-\usepackage{enumerate}        % verbessert Aufzï¿½hlungen
-\usepackage{array}            % fï¿½r Tabellen: bindet tabular-Umgebung ein
+\usepackage{enumerate}        % verbessert Aufzählungen
+\usepackage{array}            % für Tabellen: bindet tabular-Umgebung ein
 \usepackage{multicol}         % zur Indexerstellung in zwei Spalten
 \usepackage{amsthm}
 \usepackage{tabularx}
@@ -167,6 +167,29 @@ Berufsakademie Leipzig
 	\only<3>{\put(250, 142){\parbox{4cm}{schlechter}}}%
 	\only<3>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
 	\only<3>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
+	\end{picture}%
+
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Zwischenstand} 
+
+	\hspace{-0.25cm}
+	\begin{picture}(0,150)%
+		\put(0,0){\includegraphics[width=0.9\linewidth]{abbildungen/algorithm.png}}%
+		\put(280,150){\includegraphics[width=0.08\linewidth]{abbildungen/Yes_check.png}}%
+		\put(130,75){\color{alert}\parbox{4cm}{%
+		    \begin{align*} 
+				F^\text{min} & < 10^{-4} \\[-0.2cm]
+				 \sigma_{F}  & < 10^{-4} \\[-0.1cm]
+				   gen 	     & > 3000
+		    \end{align*}}
+		}
+		\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}%
+		\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}%
+		\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}
+		\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}
+
 	\end{picture}%
 
 \end{frame}

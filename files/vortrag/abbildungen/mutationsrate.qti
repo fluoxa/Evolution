@@ -58,7 +58,7 @@ WindowLabel		2
 </table>
 <multiLayer>
 Grafik1	1	1	22.11.16 16:56
-geometry	772	48	486	413	active
+geometry	223	62	486	413	active
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -98,9 +98,9 @@ AxesColors	#000000	#000000	#000000	#000000
 AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
 AxesBaseline	0	0	0	0	
 CanvasBackground	#ffffff	0
-curve	Tabelle1_1	Tabelle1_4	2	1	#000000	0	1	5	1	#000000	#000000	0	#000000	14	1	2	0	0	30	1
-curve	Tabelle1_1	Tabelle1_3	2	1	#ff0000	0	1	5	2	#ff0000	#ff0000	0	#000000	14	1	2	0	0	30	1
-curve	Tabelle1_1	Tabelle1_2	2	1	#00ff00	0	1	7	4	#00ff00	#00ff00	0	#000000	14	1	2	0	0	30	1
+curve	Tabelle1_1	Tabelle1_4	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	30	1
+curve	Tabelle1_1	Tabelle1_3	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	30	1
+curve	Tabelle1_1	Tabelle1_2	0	1	#00ff00	0	1	7	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	30	1
 scale	0	-0.05	1	0	6	3	0	0
 scale	1	-0.05	1	0	6	3	0	0
 scale	2	0	30	0	7	4	0	0
@@ -126,7 +126,7 @@ EnabledTickLabels	1	0	1	0
 <x>0.67669172932331</x>
 <y>0.96321070234114</y>
 <right>9.58579881656805</right>
-<bottom>0.859259259259259</bottom>
+<bottom>0.856989247311828</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
