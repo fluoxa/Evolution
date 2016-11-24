@@ -3,17 +3,17 @@
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
-\usepackage{amsmath}  		  % fï¿½r erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
-\usepackage{amstext}          % fï¿½r Klartext via \text{} in Formeln
-\usepackage{amsfonts}         % fï¿½r komplexere Formeln (Mengensymbole ...)
-\usepackage{amssymb}          % fï¿½r komplexere Formeln (Mengensymbole ...)
+\usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
+\usepackage{amstext}          % für Klartext via \text{} in Formeln
+\usepackage{amsfonts}         % für komplexere Formeln (Mengensymbole ...)
+\usepackage{amssymb}          % für komplexere Formeln (Mengensymbole ...)
 \usepackage{graphicx} 		  % Einbindung von Grafiken (pdf, png, jpg)
 \usepackage{dsfont}
 \usepackage{bm} 
 \usepackage{mathrsfs}
 \usepackage{setspace}
-\usepackage{enumerate}        % verbessert Aufzï¿½hlungen
-\usepackage{array}            % fï¿½r Tabellen: bindet tabular-Umgebung ein
+\usepackage{enumerate}        % verbessert Aufzählungen
+\usepackage{array}            % für Tabellen: bindet tabular-Umgebung ein
 \usepackage{multicol}         % zur Indexerstellung in zwei Spalten
 \usepackage{amsthm}
 \usepackage{tabularx}
@@ -87,7 +87,7 @@ item}##1}}%
 
 \beamertemplatenavigationsymbolsempty
 
-\title[EvoAlg]{Evolutionï¿½re Algorithmen zur Minimierung der Griewank-Funktion}   
+\title[EvoAlg]{Evolutionäre Algorithmen zur Minimierung der Griewank-Funktion}   
 \author[D. Gilgen, J.Zschoche]{Daniel Gilgen, Jan Zschoche}
 \institute[BA Leipzig]{
 Berufsakademie Leipzig
@@ -102,10 +102,10 @@ Berufsakademie Leipzig
     \vspace{1cm}
     \begin{enumerate}
 	\item \textbf{\large Einleitung}\\
-		Aufbau eines evolutionï¿½ren Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
-	\item \textbf{\large Ergebnisse fï¿½r konstante Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse fï¿½r mit Alter wachsender Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse fï¿½r mit Alter abnehmender Mutationsrate}\\
+		Aufbau eines evolutionären Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
+	\item \textbf{\large Ergebnisse für konstante Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse für mit Alter wachsender Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse für mit Alter abnehmender Mutationsrate}\\
     \end{enumerate}
 \end{frame}
 
@@ -138,11 +138,11 @@ Berufsakademie Leipzig
 		    \end{align*}}
 		}}
 		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline deterministisch}}}%
-		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediï¿½r}}}%
-		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhï¿½ngig}}}%
+		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}}%
+		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhängig}}}%
 		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
 		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{deterministisch}}}}
-		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhï¿½ngig}}}}
+		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}}
 
 	\end{picture}%
 
@@ -185,10 +185,10 @@ Berufsakademie Leipzig
 				   gen 	     & > 3000
 		    \end{align*}}
 		}
-		\put(280, 110){\color{alert}\parbox{4cm}{intermediï¿½r}}%
+		\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}%
 		\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}%
 		\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}
-		\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhï¿½ngig}}}
+		\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}
 
 	\end{picture}%
 
@@ -289,17 +289,17 @@ Berufsakademie Leipzig
 			\left.
 			\begin{array}{cl}
 				(1) & \text{Initialisierung der Anfangs-}\\
-					& \text{population zufï¿½llig} \\[0.2cm]
+					& \text{population zufällig} \\[0.2cm]
 				(2) & \text{Umwelt- und Elternselektion }\\
-					& \text{in Teilen zufallsabhï¿½ngig} \\[0.2cm]
-				(3) & \text{Mutation zufallsabhï¿½ngig} \\
+					& \text{in Teilen zufallsabhängig} \\[0.2cm]
+				(3) & \text{Mutation zufallsabhängig} \\
 			\end{array}
 			\right\}\quad \parbox{4.cm}{\textbf{Minimum bei jeder\newline Berechnung anders} }
 		\end{equation*}
 	}
 
 	\only<2> {
-		\textbf{Lï¿½sung:}\\[-0.3cm]
+		\textbf{Läsung:}\\[-0.3cm]
 		\begin{center}
 			\begin{tabular}{c}
 				\textbf{50-fache} Minimum-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.1cm]
@@ -323,24 +323,24 @@ Berufsakademie Leipzig
     \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Optimale Fitnesswerte fï¿½r $n = 2$} 
+\begin{frame}\frametitle{Optimale Fitnesswerte für $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch fï¿½r $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    Ergebnisse altersabhï¿½ngige Mutationsrate     %
+%    Ergebnisse altersabhängige Mutationsrate     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ergebnisse altersabhï¿½ngige Mutationsrate}
+\section{Ergebnisse altersabhängige Mutationsrate}
 
 \begin{frame}
     
     \begin{center}
-	\LARGE{Altersabhï¿½ngige Mutationsrate}
+	\LARGE{Altersabhängige Mutationsrate}
     \end{center}
 
 \end{frame}
@@ -350,11 +350,11 @@ Berufsakademie Leipzig
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittleres Minimum fï¿½r $n = 2$} 
+\begin{frame}\frametitle{Mittleres Minimum für $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch fï¿½r $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
 
 \end{frame}
 
