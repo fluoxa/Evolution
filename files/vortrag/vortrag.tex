@@ -1,6 +1,6 @@
 \documentclass[]{beamer}
 \usepackage[german]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
 \usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
@@ -85,7 +85,7 @@ item}##1}}%
 
 \beamertemplatenavigationsymbolsempty
 
-\title[EvoAlg]{Evolution\"are Algorithmen zur Minimierung der Griewank-Funktion}   
+\title[EvoAlg]{Evolutionäre Algorithmen zur Minimierung der Griewank-Funktion}   
 \author[D. Gilgen, J.Zschoche]{Daniel Gilgen, Jan Zschoche}
 \institute[BA Leipzig]{
 Berufsakademie Leipzig
@@ -100,10 +100,10 @@ Berufsakademie Leipzig
     \vspace{1cm}
     \begin{enumerate}
 	\item \textbf{\large Einleitung}\\
-		Aufbau eines evolution"aren Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur konstante Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur mit Alter wachsender Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur mit Alter abnehmender Mutationsrate}\\
+		Aufbau eines evolutionären Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
+	\item \textbf{\large Ergebnisse für konstante Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse für mit Alter wachsender Mutationsrate}\\[0.4cm]
+	\item \textbf{\large Ergebnisse für mit Alter abnehmender Mutationsrate}\\
     \end{enumerate}
 \end{frame}
 
@@ -136,11 +136,11 @@ Berufsakademie Leipzig
 		    \end{align*}}
 		}}
 		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}%
-		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermedi"ar}}}%
-		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabh"angig}}}%
+		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}}%
+		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhängig}}}%
 		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
 		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}
-		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabh"angig}}}}
+		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}}
 
 	\end{picture}%
 
@@ -250,6 +250,18 @@ Berufsakademie Leipzig
 % Framebeginn...%
 \begin{frame}\frametitle{Statistische Auswertung} 
 
+	\textbf{Problem:}\\
+
+	\begin{equation*}
+		\left.
+		\begin{array}{cl}
+			(1) & \text{Initialisierung der Anfangspopulation zufällig} \\
+			(1) & \text{test} \\
+			(1) & \text{test} \\
+		\end{array}
+		\right\}\quad \text{test}
+	\end{equation*}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,11 +276,11 @@ Berufsakademie Leipzig
     \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Optimale Fitnesswerte f"ur $n = 2$} 
+\begin{frame}\frametitle{Optimale Fitnesswerte für $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch f"ur $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
 
 \end{frame}
 
@@ -276,12 +288,12 @@ Berufsakademie Leipzig
 %    Ergebnisse altersabhängige Mutationsrate     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ergebnisse altersabh"angige Mutationsrate}
+\section{Ergebnisse altersabhängige Mutationsrate}
 
 \begin{frame}
     
     \begin{center}
-	\LARGE{Altersabh"angige Mutationsrate}
+	\LARGE{Altersabhängige Mutationsrate}
     \end{center}
 
 \end{frame}
@@ -291,11 +303,11 @@ Berufsakademie Leipzig
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittleres Minimum f"ur $n = 2$} 
+\begin{frame}\frametitle{Mittleres Minimum für $n = 2$} 
 
 \end{frame}
 
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch f"ur $n = 2$} 
+\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
 
 \end{frame}
 
