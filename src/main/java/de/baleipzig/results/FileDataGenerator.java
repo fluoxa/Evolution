@@ -29,10 +29,12 @@ public class FileDataGenerator {
 
     private List<List<Pair<Double, Double>>> resultList = new ArrayList<>();
     private List<List<Double>> resultErrorList = new ArrayList<>();
-    private List<List<Pair<Double, Double>>> cycleList = new ArrayList<>();
+    private List<Pair<Double, Double>> generationFitnessList = new ArrayList<>();
     private List<List<Double>> cycleErrorList = new ArrayList<>();
 
     private Map<Integer, Integer> dimensionListPositionMapper = new HashMap<>();
+    private boolean wasFilled = false;
+
 
     @Autowired
     public FileDataGenerator (EvoConfig evoConfig, ApplicationContext context) {
@@ -85,8 +87,8 @@ public class FileDataGenerator {
 
         resultList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
         resultErrorList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
-        cycleList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
-        cycleErrorList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
+        generationFitnessList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
+        cycleErrorList = new ArrayList<>(evoConfig.getMaxGenerations());
 
         int pos = 0;
 
@@ -94,7 +96,6 @@ public class FileDataGenerator {
             resultList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
             resultErrorList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
             cycleErrorList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
-            cycleList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
             dimensionListPositionMapper.put(dim, pos++);
         }
     }
@@ -115,14 +116,15 @@ public class FileDataGenerator {
 
             evoConfig.setDeterministicRandomParentRatio(0 + ((double) count) / ((double) samplingPoints));
 
+            int griewankDim = dimPosPair.getKey();
             int listNumber = dimPosPair.getValue();
-            calcDataForSingleEvolutionCycle(listNumber);
+            calcDataForSingleEvolutionCycle(listNumber, griewankDim, count);
         }
 
         System.out.println("Calculation done for number of genes: " + dimPosPair.getKey());
     }
 
-    private void calcDataForSingleEvolutionCycle(int listNumber) {
+    private void calcDataForSingleEvolutionCycle(int listNumber, int griewankDim, int count) {
 
         resultStatistic.clear();
         cycleStatistic.clear();
@@ -145,6 +147,10 @@ public class FileDataGenerator {
                     break;
                 }
 
+                if(!wasFilled && count == evoConfig.getLogNthRankRandomRatioStep() && griewankDim == evoConfig.getLogGriewankDimension()) {
+                    generationFitnessList.add(new Pair<>((double) cycle, statistic.getBestFitness()));
+                }
+
                 if(cycle % 250 == 0) {
                     System.out.printf(" %s", cycle);
                 }
@@ -152,12 +158,15 @@ public class FileDataGenerator {
 
             System.out.println("");
 
+            if(count == evoConfig.getLogNthRankRandomRatioStep() && griewankDim == evoConfig.getLogGriewankDimension()) {
+                wasFilled = true;
+            }
+
             resultStatistic.addValue(avengers.getFittestIndividual().getFitness());
             cycleStatistic.addValue(cycle);
         }
 
         resultList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(), resultStatistic.getMax()));
-        resultErrorList.get(listNumber).add(resultStatistic.getStandardDeviation());
     }
 
     private void saveData() {
@@ -170,9 +179,10 @@ public class FileDataGenerator {
 
         for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-            header = String.format("%sratio; opt_%s;",
+            header = String.format("%sratio; minimum_%s; ",
                     header,
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase));
+                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase)
+            );
         }
 
         sb.append(header);
@@ -184,7 +194,7 @@ public class FileDataGenerator {
 
             for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-                line = String.format("%s%.3f; %.3f;",
+                line = String.format("%s %.3f; %.8f;",
                         line,
                         resultList.get(crtCase).get(lineNumber).getKey(),
                         -resultList.get(crtCase).get(lineNumber).getValue()
@@ -199,6 +209,21 @@ public class FileDataGenerator {
             PrintWriter writer = new PrintWriter(createOutputPath()+"/results.dat", "UTF-8");
             writer.printf(sb.toString());
             writer.close();
+        }
+        catch( IOException ex){
+            System.out.println(ex);
+        }
+
+        StringBuilder sbCycleFitness = new StringBuilder();
+
+        for(Pair<Double, Double> data : generationFitnessList) {
+            sbCycleFitness.append(String.format("%f; %.8f;\n", data.getKey(), data.getValue()));
+        }
+
+        try {
+            PrintWriter writer2 = new PrintWriter(createOutputPath()+"/generationFitness.dat", "UTF-8");
+            writer2.printf(sbCycleFitness.toString());
+            writer2.close();
         }
         catch( IOException ex){
             System.out.println(ex);
