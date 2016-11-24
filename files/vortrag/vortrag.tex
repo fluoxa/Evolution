@@ -19,6 +19,8 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{adjustbox}
+\usepackage{rotating}
+
 
 % Theme %
 \usetheme{CambridgeUS}
@@ -248,20 +250,35 @@ Berufsakademie Leipzig
 
 
 % Framebeginn...%
-\begin{frame}\frametitle{Statistische Auswertung} 
+\begin{frame}[t]\frametitle{Statistische Auswertung} 
 
-	\textbf{Problem:}\\
+	\only<1-2> {
+		\textbf{Problem:}\\[-0.4cm]
 
-	\begin{equation*}
-		\left.
-		\begin{array}{cl}
-			(1) & \text{Initialisierung der Anfangspopulation zufällig} \\
-			(1) & \text{test} \\
-			(1) & \text{test} \\
-		\end{array}
-		\right\}\quad \text{test}
-	\end{equation*}
+		\begin{equation*}
+			\left.
+			\begin{array}{cl}
+				(1) & \text{Initialisierung der Anfangs-}\\
+					& \text{population zufällig} \\[0.2cm]
+				(2) & \text{Umwelt- und Elternselektion }\\
+					& \text{in Teilen zufallsabhängig} \\[0.2cm]
+				(3) & \text{Mutation zufallsabhängig} \\
+			\end{array}
+			\right\}\quad \parbox{4.cm}{\textbf{Minimum bei jeder\newline Berechnung anders} }
+		\end{equation*}
+	}
 
+	\only<2> {
+		\textbf{Lösung:}\\[-0.3cm]
+		\begin{center}
+			\begin{tabular}{c}
+				\textbf{50-fache} Minimum-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.1cm]
+				\begin{rotate}{-90} $\Longrightarrow$ \end{rotate} \\[0.65cm]
+				\textbf {Minimum} $\mathbf{m} \boldsymbol{=} \bar{\mathbf{m}} \boldsymbol{\pm} \boldsymbol{\sigma}_\mathbf{m}$ 
+			\end{tabular}
+			\hspace{-3.7cm} statistische Auswertung
+		\end{center}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
