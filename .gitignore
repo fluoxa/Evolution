@@ -1,3 +1,12 @@
 .idea
 /*.iml
 *.iml
+/files/vortrag/vortrag.snm
+/files/vortrag/vortrag.synctex.gz
+/files/vortrag/vortrag.toc
+/files/vortrag/vortrag.aux
+/files/vortrag/vortrag.log
+/files/vortrag/vortrag.nav
+/files/vortrag/vortrag.out
+/files/vortrag/vortrag.pdf
+/target
