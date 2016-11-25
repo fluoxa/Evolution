@@ -4,6 +4,8 @@ de:
       maxGenerations: 3000
       deterministicRandomParentRatio: 0.9
       rankRandomRatioNaturalSelection: 0.5 #hier vielleicht für die werte 0.9, 0.75, 0.5
+      logGriewankDimension : 2
+      logNthRankRandomStep : 0
       genomeConfig:
         numberOfGenes: 10
         lowerBound: -512
@@ -11,8 +13,8 @@ de:
         mutationRate: 0.5  # hier vielleicht für die werte 0.1, 0.3, 0.5
         mutationMaxLength: 5
       populationConfig:
-        populationSize: 16
-        childrenGenerationSize: 20
+        populationSize: 40
+        childrenGenerationSize: 80
       tasksConfig:
         consideredGriewankDimensions:
           - 2
@@ -20,8 +22,8 @@ de:
           - 8
           - 16
           - 32
-        numberOfSamplingPoints: 20
-        runsPerDataPoint: 50
+        numberOfSamplingPoints: 10
+        runsPerDataPoint: 35
         outputPath: D:\evoresults\
         strategy: constMutationMixedParentSelection # nach finden der besten parameterkonfiguration (s.o.) auch noch für diese für die ageBasedMutation
     example:
