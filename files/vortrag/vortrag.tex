@@ -137,11 +137,11 @@ Berufsakademie Leipzig
 			   gen 	     & > 3000
 		    \end{align*}}
 		}}
-		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline deterministisch}}}%
+		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}%
 		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}}%
 		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhängig}}}%
 		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
-		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{deterministisch}}}}
+		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}
 		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}}
 
 	\end{picture}%
@@ -157,7 +157,7 @@ Berufsakademie Leipzig
 	
 	\only<3>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel2.png}}}%	
 	
-	\only<1->{\put(0,160){\parbox{8cm}{\Large \textbf{Deterministische Selektion:}}}}%
+	\only<1->{\put(0,160){\parbox{8cm}{\Large \textbf{Rangbasierte Selektion:}}}}%
 	\only<1-2>{\put(160, 135){\parbox{4cm}{\textbf{unsortiert}}}}%
 	\only<2>{\put(165, 20){\parbox{4cm}{\textbf{Fitness}}}}%
 	\only<2>{\put(70, 30){\parbox{4cm}{besser}}}%
@@ -299,14 +299,17 @@ Berufsakademie Leipzig
 	}
 
 	\only<2> {
-		\textbf{Läsung:}\\[-0.3cm]
+		\textbf{Lösung:}\\
+		\vspace{-0.4cm}
 		\begin{center}
 			\begin{tabular}{c}
-				\textbf{50-fache} Minimum-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.1cm]
-				\begin{rotate}{-90} $\Longrightarrow$ \end{rotate} \\[0.65cm]
-				\textbf {Minimum} $\mathbf{m} \boldsymbol{=} \bar{\mathbf{m}} \boldsymbol{\pm} \boldsymbol{\sigma}_\mathbf{m}$ 
+				\textbf{50-fache} Fitness-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.2cm]
+				\begin{rotate}{-90} $\Longrightarrow$ \end{rotate}\\[0.55cm]
+				\begin{tabular}{r l}				
+					\textbf {gemittelte Fitness} $\mathbf{m}$ &\hspace{-0.45cm} $\boldsymbol{=} \bar{\mathbf{m}} \boldsymbol{\pm} \boldsymbol{\sigma}_\mathbf{m}$ \\
+					\textbf {beste Fitness} $\mathbf{m}$ &\hspace{-0.45cm} $\boldsymbol{=} \boldsymbol{\min \{} \mathbf{m_1, ..., m_{50}} \boldsymbol{\}}$ 
+				\end{tabular}
 			\end{tabular}
-			\hspace{-3.7cm} statistische Auswertung
 		\end{center}
 	}
 \end{frame}
