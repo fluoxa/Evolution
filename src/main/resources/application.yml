@@ -13,15 +13,15 @@ de:
         mutationRate: 0.5
         mutationMaxLength: 5
       populationConfig:
-        populationSize: 2
-        childrenGenerationSize: 1
+        populationSize: 40
+        childrenGenerationSize: 50
       tasksConfig:
         consideredGriewankDimensions:
-          - 2
-          - 4
-          - 8
+          #- 2
+          #- 4
+          #- 8
           - 16
-          - 32
+          #- 32
         numberOfSamplingPoints: 20
         runsPerDataPoint: 35
         outputPath: D:\evoresults\
