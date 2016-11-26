@@ -14,7 +14,7 @@ public class ParentSelection {
     public static Function<Population, Parents> mixedParentSelectionFactory(double ratio) {
        return population -> {
             double randomValue = Math.random();
-            if(randomValue < ratio) {
+           if(randomValue < Strategy.getParentSelectionRatio()) {
                 return DETERMINISTIC_PARENT_SELECTION.apply(population);
             } else {
                 return RANDOM_PARENT_SELECTION.apply(population);
@@ -31,7 +31,7 @@ public class ParentSelection {
     private static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
             population -> selectByListManipulation(population, individuals -> {
                 Collections.sort(individuals, Collections.reverseOrder());
-                Long consideredIndividualCount = Math.max(2, Math.round(individuals.size() * 0.10));
+                Long consideredIndividualCount = Math.max(2, Math.round(individuals.size() * 0.25));
                 individuals = individuals.subList(0, consideredIndividualCount.intValue());
                 Collections.shuffle(individuals);
                 return individuals;

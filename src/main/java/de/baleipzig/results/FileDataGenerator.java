@@ -3,6 +3,7 @@ package de.baleipzig.results;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import de.baleipzig.configuration.EvoConfig;
 import de.baleipzig.configuration.TasksConfig;
+import de.baleipzig.configuration.strategies.Strategy;
 import de.baleipzig.population.Population;
 import de.baleipzig.population.Statistic;
 import org.apache.commons.math3.stat.descriptive.DescriptiveStatistics;
@@ -114,6 +115,7 @@ public class FileDataGenerator {
             System.out.printf("ParentRatio %1.2f\n", 0 + ((double) count) / ((double) samplingPoints));
 
             evoConfig.setDeterministicRandomParentRatio(0 + ((double) count) / ((double) samplingPoints));
+            Strategy.setParentSelectionRatio(evoConfig.getDeterministicRandomParentRatio());
 
             int listNumber = dimPosPair.getValue();
             calcDataForSingleEvolutionCycle(listNumber, dimPosPair.getKey(), count);
