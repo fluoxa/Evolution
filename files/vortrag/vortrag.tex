@@ -403,16 +403,13 @@ Berufsakademie Leipzig
 % Framebeginn...%
 	\begin{frame}\frametitle{Zusammenfassung}
 	\begin{itemize}
-		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{sehr gute} Ergebnisse ($F < 0.04$) und für $\mathbf{n>4}$ \textbf{durchschnittliche} Ergebnisse ($F < 1$)
+		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{gute} Ergebnisse ($F < 0.2$) und für $\mathbf{n>4}$ \textbf{mindestens durchschnittliche} Ergebnisse ($F < 1$)
 
-		\item es existiert \textbf{immer ein optimales Verhältnis} zwischen rangbasierter und zufälliger Elternselektion:
-			\begin{enumerate}
-				\item[(1)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-				\item[(2)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-				\item[(3)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-			\end{enumerate}
+		\item \textbf{abnehmende} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
+		\item \textbf{konstante} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
+		\item \textbf{zunehmende} Mutationsrate $longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr}$ nahe 1 durch hohe Diversität 
 		
-		\item für $n \leq 4$ zunehmende Mutationsrate, für $n>4$ abnehmende Mutationsrate am genauesten
+		\item zunehmende Mutationsrate mit $p_\text{rr} \geq 0.8$ am genauesten
 		
 	\end{itemize}
 \end{frame}
