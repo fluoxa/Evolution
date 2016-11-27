@@ -1,3 +1,16 @@
 .idea
 /*.iml
 *.iml
+/files/zusammenfassung/*.xml
+/files/zusammenfassung/*.gz
+/files/zusammenfassung/*.aux
+/files/zusammenfassung/*.bcf
+/files/zusammenfassung/*.log
+/files/zusammenfassung/*.pdf
+/files/zusammenfassung/Zusammenfassung.synctex.gz
+/files/zusammenfassung/Zusammenfassung.aux
+/files/zusammenfassung/Zusammenfassung.bcf
+/files/zusammenfassung/Zusammenfassung.log
+/files/zusammenfassung/Zusammenfassung.pdf
+/files/zusammenfassung/Zusammenfassung.run.xml
+/target
