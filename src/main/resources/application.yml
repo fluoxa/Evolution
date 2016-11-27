@@ -13,17 +13,17 @@ de:
         mutationRate: 0.5
         mutationMaxLength: 5
       populationConfig:
-        populationSize: 40
-        childrenGenerationSize: 50
+        populationSize: 16
+        childrenGenerationSize: 20
       tasksConfig:
         consideredGriewankDimensions:
-          #- 2
-          #- 4
-          #- 8
+          - 2
+          - 4
+          - 8
           - 16
-          #- 32
+          - 32
         numberOfSamplingPoints: 20
-        runsPerDataPoint: 35
+        runsPerDataPoint: 50
         outputPath: D:\evoresults\
         strategy: constMutationMixedParentSelection # nach finden der besten parameterkonfiguration (s.o.) auch noch für diese für die ageBasedMutation
     example:
