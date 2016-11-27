@@ -103,9 +103,9 @@ Berufsakademie Leipzig
     \begin{enumerate}
 	\item \textbf{\large Einleitung}\\
 		Aufbau eines evolutionären Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
-	\item \textbf{\large Ergebnisse für konstante Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse für mit Alter wachsender Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse für mit Alter abnehmender Mutationsrate}\\
+	\item \textbf{\large Ergebnisse}\\
+		Darstellung Einzelzyklus, Vergleich Mittelwert zu Optimum, Variation der Elternauswahl, Variation Mutationsrate\\[0.4cm]
+	\item \textbf{\large Zusammenfassung}
     \end{enumerate}
 \end{frame}
 
@@ -339,56 +339,82 @@ Berufsakademie Leipzig
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Ergebnisse konstante Mutationsrate		%
+%				Ergebnisse					%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ergebnisse konstante Mutationsrate} 
+\section{Ergebnisse} 
 
 \begin{frame}
     \begin{center}
-	\LARGE{Konstante Mutationsrate}
+	\LARGE{Ergebnisse}
     \end{center}
 \end{frame}
 
-\begin{frame}\frametitle{Optimale Fitnesswerte für $n = 2$} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    Ergebnisse altersabhängige Mutationsrate     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Ergebnisse altersabhängige Mutationsrate}
-
-\begin{frame}
-    
-    \begin{center}
-	\LARGE{Altersabhängige Mutationsrate}
-    \end{center}
-
+% Framebeginn...%
+\begin{frame}\frametitle{Darstellung eines Evolutionszyklus (n = 2)} 
+	\begin{minipage}{0.7\linewidth}
+		\includegraphics[width=8.5cm]{abbildungen/mutationsrate.pdf}
+	\end{minipage}
+	\begin{minipage}[t]{0.28\linewidth}
+	\textbf{Parameter:}
+	\begin{itemize}
+	\item $p_\text{rr} = 1$ \\
+	(rangbasierte Elternselektion)\\[-0.75cm]
+	\end{itemize}
+	\end{minipage}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Elternselektion detailiert} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittleres Minimum für $n = 2$} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch für $n = 2$} 
-
+\begin{frame}\frametitle{Ausführliche Darstellung Fitness bei variablem $p_\text{rr}$ für $n = 2$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Zusammenfassung}
+\begin{frame}\frametitle{Fitness für abnehmende Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
 
+% Framebeginn...%
+\begin{frame}\frametitle{Fitness für konstante Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Fitness für zunehmende Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 2$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 32$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+	\begin{frame}\frametitle{Zusammenfassung}
+	\begin{itemize}
+		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{sehr gute} Ergebnisse ($F < 0.04$) und für $\mathbf{n>4}$ \textbf{durchschnittliche} Ergebnisse ($F < 1$)
+
+		\item es existiert \textbf{immer ein optimales Verhältnis} zwischen rangbasierter und zufälliger Elternselektion:
+			\begin{enumerate}
+				\item[(1)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+				\item[(2)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+				\item[(3)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+			\end{enumerate}
+		
+		\item für $n \leq 4$ zunehmende Mutationsrate, für $n>4$ abnehmende Mutationsrate am genauesten
+		
+	\end{itemize}
 \end{frame}
 
 \end{document}
-

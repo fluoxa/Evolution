@@ -1,0 +1,25 @@
+{
+  "maxGenerations" : 3000,
+  "deterministicRandomParentRatio" : 0.9,
+  "rankRandomRatioNaturalSelection" : 0.5,
+  "genomeConfig" : {
+    "numberOfGenes" : 10,
+    "lowerBound" : -512.0,
+    "upperBound" : 511.0,
+    "mutationRate" : 0.5,
+    "mutationMaxLength" : 5.0
+  },
+  "populationConfig" : {
+    "populationSize" : 40,
+    "childrenGenerationSize" : 50
+  },
+  "tasksConfig" : {
+    "consideredGriewankDimensions" : [ 2, 4, 8, 16, 32 ],
+    "numberOfSamplingPoints" : 20,
+    "strategy" : "ageBasedDecreasingMutationMixedParentSelection",
+    "outputPath" : "D:\\evoresults\\",
+    "runsPerDataPoint" : 35
+  },
+  "logGriewankDimension" : 2,
+  "logNthRankRandomStep" : 20
+}

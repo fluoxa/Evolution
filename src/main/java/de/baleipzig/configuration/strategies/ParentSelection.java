@@ -14,7 +14,7 @@ public class ParentSelection {
     public static Function<Population, Parents> mixedParentSelectionFactory(double ratio) {
        return population -> {
             double randomValue = Math.random();
-            if(randomValue < ratio) {
+           if(randomValue < Strategy.getParentSelectionRatio()) {
                 return DETERMINISTIC_PARENT_SELECTION.apply(population);
             } else {
                 return RANDOM_PARENT_SELECTION.apply(population);
