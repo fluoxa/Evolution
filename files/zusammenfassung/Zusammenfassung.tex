@@ -89,11 +89,11 @@
 	\textbf{Elternauswahl:} Kombination aus rangbasierter und zufälliger Auswahl. Bei der rangbasierten werden die besten 25\% der Population als Grundauswahl herangezogen und aus diesen zufällig Paare gebildet.
 	Eine der Strategien wird pro Paarung mit einer bestimmten Wahrscheinlichkeit ausgewählt und zur Anwendung gebracht. Es werden alle Verhältnisse der beiden Strategien mit einer Schrittweite von 5\% betrachtet. \\\\	
 	\textbf{Mutation:} Es werden drei Mutationsstrategien betrachtet. \\
-	\textbf{Konstant:} Feste Wahrscheinlichkeit, gerade erzeugte Individuen werden nicht mutiert.
-	\textbf{Altersbasiert ansteigend:} Die Wahrscheinlichkeit nimmt mit steigendem Alter zu.\\
-	\textbf{Altersbasiert abnehmend:} Die Wahrscheinlichkeit nimmt mit steigendem Alter ab. \\
+	\textbf{Konstant:} bei neu erzeugten Individuen wird jedes Gen mit einer Wahrscheinlichkeit von 50\% mutiert, ältere Individuen werden nicht mutiert.
+	\textbf{Altersbasiert ansteigend:} Die Mutationswahrscheinlichkeit eines Allels nimmt mit steigendem Alter zu.\\
+	\textbf{Altersbasiert abnehmend:} Die Mutationswahrscheinlichkeit eines Allels nimmt mit steigendem Alter ab. \\
 	Im Falle einer Mutation wird das Allel um einen zufälligen Wert zwischen -5 und 5 verschoben. \\\\
-	\textbf{Rekombination:} Es wird die intermediäere Rekombination angewendet.\\\\
+	\textbf{Rekombination:} Es wird die intermediäre Rekombination angewendet.\\\\
 	\textbf{Umweltselektion:} Aus der Gesamtpopulation werden die ersten 50\% der neuen Generation rangbasiert nach dem Roulette-Verfahren und die zweiten 50\% zufällig ausgewählt. Doppelte Auswahl von Individuen wird ausgeschlossen.\\\\
 	\textbf{Parameter:} Die Populationsgröße beträgt 40 und bleibt über alle Generationen konstant. In jeder Generation werden 50 neue Kinder erzeugt.
 	
