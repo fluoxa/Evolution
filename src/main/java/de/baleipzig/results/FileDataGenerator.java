@@ -28,9 +28,11 @@ public class FileDataGenerator {
     private final DescriptiveStatistics cycleStatistic = new DescriptiveStatistics();
 
     private List<List<Pair<Double, Double>>> resultList = new ArrayList<>();
+    private List<Pair<Integer, Double>> generationBestFitnessList = new ArrayList<>();
     private List<List<Double>> resultErrorList = new ArrayList<>();
-    private List<List<Pair<Double, Double>>> cycleList = new ArrayList<>();
-    private List<List<Double>> cycleErrorList = new ArrayList<>();
+    private List<List<Double>> optimumList = new ArrayList<>();
+
+    private boolean generationFitnessListFilled = false;
 
     private Map<Integer, Integer> dimensionListPositionMapper = new HashMap<>();
 
@@ -82,19 +84,17 @@ public class FileDataGenerator {
             tasksConfig.setStrategy(strategy);
         }
 
-
         resultList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
+        generationBestFitnessList = new ArrayList<>(evoConfig.getMaxGenerations());
         resultErrorList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
-        cycleList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
-        cycleErrorList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
+        optimumList = new ArrayList<>(tasksConfig.getConsideredGriewankDimensions().size());
 
         int pos = 0;
 
         for (int dim : tasksConfig.getConsideredGriewankDimensions() ) {
             resultList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
             resultErrorList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
-            cycleErrorList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
-            cycleList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
+            optimumList.add(new ArrayList<>(tasksConfig.getNumberOfSamplingPoints()));
             dimensionListPositionMapper.put(dim, pos++);
         }
     }
@@ -116,13 +116,13 @@ public class FileDataGenerator {
             evoConfig.setDeterministicRandomParentRatio(0 + ((double) count) / ((double) samplingPoints));
 
             int listNumber = dimPosPair.getValue();
-            calcDataForSingleEvolutionCycle(listNumber);
+            calcDataForSingleEvolutionCycle(listNumber, dimPosPair.getKey(), count);
         }
 
         System.out.println("Calculation done for number of genes: " + dimPosPair.getKey());
     }
 
-    private void calcDataForSingleEvolutionCycle(int listNumber) {
+    private void calcDataForSingleEvolutionCycle(int listNumber, int griewankDim, int nthRankRandomStep) {
 
         resultStatistic.clear();
         cycleStatistic.clear();
@@ -141,6 +141,10 @@ public class FileDataGenerator {
 
                 Statistic statistic = avengers.createStatistic();
 
+                if(!generationFitnessListFilled && griewankDim == evoConfig.getLogGriewankDimension() && nthRankRandomStep == evoConfig.getLogNthRankRandomStep()) {
+                    generationBestFitnessList.add(new Pair<>(cycle, statistic.getBestFitness()));
+                }
+
                 if (statistic.getStandardDeviation() < 0.0001 || Math.abs(statistic.getBestFitness()) < 0.0001) {
                     break;
                 }
@@ -152,14 +156,16 @@ public class FileDataGenerator {
 
             System.out.println("");
 
+            if(griewankDim == evoConfig.getLogGriewankDimension() && nthRankRandomStep == evoConfig.getLogNthRankRandomStep()) {
+                generationFitnessListFilled = true;
+            }
+
             resultStatistic.addValue(avengers.getFittestIndividual().getFitness());
-            cycleStatistic.addValue(cycle);
         }
 
         resultList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(), resultStatistic.getMean()));
         resultErrorList.get(listNumber).add(resultStatistic.getStandardDeviation());
-        cycleList.get(listNumber).add(new Pair<>(evoConfig.getDeterministicRandomParentRatio(),cycleStatistic.getMean()));
-        cycleErrorList.get(listNumber).add(cycleStatistic.getStandardDeviation());
+        optimumList.get(listNumber).add(resultStatistic.getMax());
     }
 
     private void saveData() {
@@ -172,9 +178,8 @@ public class FileDataGenerator {
 
         for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-            header = String.format("%sratio; opt_%s; err_%s; ratio; generations_%s; err_%s; ",
+            header = String.format("%sratio; average_%s; err_%s; optimum_%s; ",
                     header,
-                    evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
                     evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
                     evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase),
                     evoConfig.getTasksConfig().getConsideredGriewankDimensions().get(crtCase)
@@ -190,14 +195,12 @@ public class FileDataGenerator {
 
             for(int crtCase = 0; crtCase < numberOfConsideredCases; crtCase++) {
 
-                line = String.format("%s%.3f; %.3f; %.3f; %.3f; %.3f; %.3f; ",
+                line = String.format("%s%.3f; %.8f; %.6f; %.8f; ",
                         line,
                         resultList.get(crtCase).get(lineNumber).getKey(),
                         -resultList.get(crtCase).get(lineNumber).getValue(),
                         resultErrorList.get(crtCase).get(lineNumber),
-                        cycleList.get(crtCase).get(lineNumber).getKey(),
-                        cycleList.get(crtCase).get(lineNumber).getValue(),
-                        cycleErrorList.get(crtCase).get(lineNumber)
+                        -optimumList.get(crtCase).get(lineNumber)
                         );
             }
 
@@ -214,5 +217,20 @@ public class FileDataGenerator {
             System.out.println(ex);
         }
 
+        StringBuilder sbGenFit = new StringBuilder();
+
+        for(Pair<Integer, Double> data : generationBestFitnessList) {
+
+            sbGenFit.append(String.format("%d; %.8f; \n", data.getKey(), -data.getValue()));
+        }
+
+        try {
+            PrintWriter generationFitnessWriter = new PrintWriter(createOutputPath()+"/generatioFitness_griewank"+evoConfig.getLogGriewankDimension()+"_"+ evoConfig.getLogNthRankRandomStep()+"thStep.dat", "UTF-8");
+            generationFitnessWriter.printf(sbGenFit.toString());
+            generationFitnessWriter.close();
+        }
+        catch( IOException ex){
+            System.out.println(ex);
+        }
     }
 }

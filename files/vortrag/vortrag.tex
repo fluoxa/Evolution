@@ -1,6 +1,6 @@
 \documentclass[]{beamer}
 \usepackage[german]{babel}
-\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{ae}
 \usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
@@ -19,6 +19,8 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage{adjustbox}
+\usepackage{rotating}
+
 
 % Theme %
 \usetheme{CambridgeUS}
@@ -85,7 +87,7 @@ item}##1}}%
 
 \beamertemplatenavigationsymbolsempty
 
-\title[EvoAlg]{Evolution\"are Algorithmen zur Minimierung der Griewank-Funktion}   
+\title[EvoAlg]{Evolutionäre Algorithmen zur Minimierung der Griewank-Funktion}   
 \author[D. Gilgen, J.Zschoche]{Daniel Gilgen, Jan Zschoche}
 \institute[BA Leipzig]{
 Berufsakademie Leipzig
@@ -100,10 +102,10 @@ Berufsakademie Leipzig
     \vspace{1cm}
     \begin{enumerate}
 	\item \textbf{\large Einleitung}\\
-		Aufbau eines evolution"aren Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur konstante Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur mit Alter wachsender Mutationsrate}\\[0.4cm]
-	\item \textbf{\large Ergebnisse f"ur mit Alter abnehmender Mutationsrate}\\
+		Aufbau eines evolutionären Algorithmus, Strategie- und Parameterwahl, Auswertung \\[0.4cm]
+	\item \textbf{\large Ergebnisse}\\
+		Darstellung Einzelzyklus, Vergleich Mittelwert zu Optimum, Variation der Elternauswahl, Variation Mutationsrate\\[0.4cm]
+	\item \textbf{\large Zusammenfassung}
     \end{enumerate}
 \end{frame}
 
@@ -128,19 +130,65 @@ Berufsakademie Leipzig
 	\hspace{-0.25cm}
 	\begin{picture}(0,150)%
 		\only<1->{\put(0,0){\includegraphics[width=0.9\linewidth]{abbildungen/algorithm.png}}}%
-		\only<2->{\put(130,45){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{%
+		\only<2->{\put(130,75){\color{alert}\parbox{4cm}{%
 		    \begin{align*} 
 			F^\text{min} & < 10^{-4} \\[-0.2cm]
 			 \sigma_{F}  & < 10^{-4} \\[-0.1cm]
 			   gen 	     & > 3000
 		    \end{align*}}
-		}}}%
-		\only<3-6>{\put(200, 145){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}}%
-		\only<4->{\put(280, 110){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{intermedi"ar}}}}%
-		\only<5-6>{\put(260, 0){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{zeitlich konstant,\newline altersabh"angig}}}}%
-		\only<6->{\put(165, -27){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}}%
-		\only<7>{\put(200, 145){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}}%
-		\only<7>{\put(260, 0){\color{alert}\makebox(0,0)[lb]{\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabh"angig}}}}}%
+		}}
+		\only<3-6>{\put(200, 155){\color{alert}\parbox{4cm}{zufallsbasiert,\newline rangbasiert}}}%
+		\only<4->{\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}}%
+		\only<5-6>{\put(260, 10){\color{alert}\parbox{4cm}{zeitlich konstant,\newline altersabhängig}}}%
+		\only<6->{\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}}%
+		\only<7>{\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}}
+		\only<7>{\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}}
+
+	\end{picture}%
+
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Elternselektion detailiert} 
+
+	\begin{picture}(0,140)%
+	\only<1>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel0.png}}}%	
+	\only<2>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel1.png}}}%	
+	
+	\only<3>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/detParSel2.png}}}%	
+	
+	\only<1->{\put(0,160){\parbox{8cm}{\Large \textbf{Rangbasierte Selektion:}}}}%
+	\only<1-2>{\put(160, 135){\parbox{4cm}{\textbf{unsortiert}}}}%
+	\only<2>{\put(165, 20){\parbox{4cm}{\textbf{Fitness}}}}%
+	\only<2>{\put(70, 30){\parbox{4cm}{besser}}}%
+	\only<2>{\put(250, 30){\parbox{4cm}{schlechter}}}%
+	\only<3>{\put(165, 135){\parbox{4cm}{\textbf{Fitness}}}}%
+	\only<3>{\put(70, 142){\parbox{4cm}{besser}}}%
+	\only<3>{\put(250, 142){\parbox{4cm}{schlechter}}}%
+	\only<3>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
+	\only<3>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
+	\end{picture}%
+
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Zwischenstand} 
+
+	\hspace{-0.25cm}
+	\begin{picture}(0,150)%
+		\put(0,0){\includegraphics[width=0.9\linewidth]{abbildungen/algorithm.png}}%
+		\put(280,150){\includegraphics[width=0.08\linewidth]{abbildungen/Yes_check.png}}%
+		\put(130,75){\color{alert}\parbox{4cm}{%
+		    \begin{align*} 
+				F^\text{min} & < 10^{-4} \\[-0.2cm]
+				 \sigma_{F}  & < 10^{-4} \\[-0.1cm]
+				   gen 	     & > 3000
+		    \end{align*}}
+		}
+		\put(280, 110){\color{alert}\parbox{4cm}{intermediär}}%
+		\put(165, -17){\color{alert}\parbox{4cm}{50\% zufallsbasiert,\newline 50\% rangbasiert}}%
+		\put(200, 155){\color{alert}\parbox{4cm}{ \large \textbf{zufallsbasiert,}\newline \textbf{rangbasiert}}}
+		\put(260, 10){\color{alert}\parbox{4cm}{\large \textbf{zeitlich konstant,}\newline \textbf{altersabhängig}}}
 
 	\end{picture}%
 
@@ -154,61 +202,61 @@ Berufsakademie Leipzig
 
 		\only<1->{
 		    \put(20,50){\includegraphics[width=0.7\linewidth]{abbildungen/Genom1.png}}%
-		    \put(0,80){\makebox(0,0)[lb]{\parbox{4cm}{\Large \textbf{Genome:}}}}%
-		    \put(26,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{1}$}}}%
-		    \put(45,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,55){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(0,80){\parbox{4cm}{\Large \textbf{Genom:}}}%
+		    \put(26,55){\parbox{4cm}{$g_{1}$}}%
+		    \put(45,55){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,55){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,55){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,55){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,55){\parbox{4cm}{$g_{6}$}}%
 
 
 		    \put(29,2){\includegraphics[height=1.5cm]{abbildungen/arrow.png}}%
 
-		    \put(10, -2){\makebox(0,0)[lb]{\parbox{6cm}{%
+		    \put(10, 23){\parbox{6cm}{%
 			\begin{align*}%
 			    \tilde{g}_{1}\! = & \; rnd()\! <\! m(a)\, ? \\ 
 					       & \;(g_{1}\! +\! M_\text{rnd})\, :\, g_{1};
-			\end{align*}}}}%
+			\end{align*}}}%
 		}
 		\only<1>{
 		    \put(20,-20){\includegraphics[width=0.7\linewidth]{abbildungen/Genom.png}}%
-		    \put(26,-15){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-15){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-15){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,-15){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-15){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-15){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-15){\parbox{4cm}{$g_{6}$}}%
 
 		}
 		\only<2->{
 		    \put(20,-20){\includegraphics[width=0.7\linewidth]{abbildungen/Genom2.png}}%
 		
-		    \put(26,-15){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{2}$}}}%
-		    \put(65,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-15){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-15){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-15){\parbox{4cm}{$g_{2}$}}%
+		    \put(65,-15){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-15){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-15){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-15){\parbox{4cm}{$g_{6}$}}%
 
 		    \put(49,-68){\includegraphics[height=1.5cm]{abbildungen/arrow.png}}%
 
-		    \put(30, -73){\makebox(0,0)[lb]{\parbox{6cm}{%
+		    \put(30, -48){\parbox{6cm}{%
 			\begin{align*}%
 			    \tilde{g}_{2}\! = & \; rnd()\! <\! m(a)\, ? \\ 
 					       & \;(g_{2}\! +\! M_\text{rnd})\, :\, g_{2};
-			\end{align*}}}}%
+			\end{align*}}}%
 
 
 		    \put(20,-90){\includegraphics[width=0.7\linewidth]{abbildungen/Genom3.png}}%
-		    \put(26,-85){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{1}$}}}%
-		    \put(45,-85){\makebox(0,0)[lb]{\parbox{4cm}{$\tilde{g}_{2}$}}}%
-		    \put(65,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{3}$}}}%
-		    \put(85,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{4}$}}}%
-		    \put(105,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{5}$}}}%
-		    \put(125,-85){\makebox(0,0)[lb]{\parbox{4cm}{$g_{6}$}}}%
+		    \put(26,-85){\parbox{4cm}{$\tilde{g}_{1}$}}%
+		    \put(45,-85){\parbox{4cm}{$\tilde{g}_{2}$}}%
+		    \put(65,-85){\parbox{4cm}{$g_{3}$}}%
+		    \put(85,-85){\parbox{4cm}{$g_{4}$}}%
+		    \put(105,-85){\parbox{4cm}{$g_{5}$}}%
+		    \put(125,-85){\parbox{4cm}{$g_{6}$}}%
 
-		    \put(74,-115){\makebox(0,0)[lb]{\parbox{4cm}{ \Large \textbf{...}}}}%
+		    \put(74,-115){\parbox{4cm}{ \Large \textbf{...}}}%
 		}
 	    \end{picture}%
 	\end{minipage}
@@ -217,7 +265,7 @@ Berufsakademie Leipzig
 		\vspace{-0.7cm}
 		$rnd() \in [0,1]$ \\ $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\[0.2cm]
 		$m(a)$ \\ $^{}$ \hspace{0.2cm} ... (altersabhg.) Mutationsrate\\[0.2cm]
-		$M_\text{rnd} \in [0,5]$ \\  $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\
+		$\textcolor{alert}{M_\text{rnd} \in [-5,5]}$ \\  $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\
 	\end{minipage}
 	
 \end{frame}
@@ -232,77 +280,117 @@ Berufsakademie Leipzig
 
 
 % Framebeginn...%
-\begin{frame}\frametitle{Statistische Auswertung} 
+\begin{frame}[t]\frametitle{Statistische Auswertung} 
 
+	\only<1-2> {
+		\textbf{Problem:}\\[-0.4cm]
+
+		\begin{equation*}
+			\left.
+			\begin{array}{cl}
+				(1) & \text{Initialisierung der Anfangs-}\\
+					& \text{population zufällig} \\[0.2cm]
+				(2) & \text{Umwelt- und Elternselektion }\\
+					& \text{in Teilen zufallsabhängig} \\[0.2cm]
+				(3) & \text{Mutation zufallsabhängig} \\
+			\end{array}
+			\right\}\quad \parbox{4.cm}{\textbf{Minimum bei jeder\newline Berechnung anders} }
+		\end{equation*}
+	}
+
+	\only<2> {
+		\textbf{Lösung:}\\
+		\vspace{-0.4cm}
+		\begin{center}
+			\begin{tabular}{c}
+				\textbf{50-fache} Fitness-Berechnung: $\{m_1, ..., m_{50}\}$ \\[-0.2cm]
+				\begin{rotate}{-90} $\Longrightarrow$ \end{rotate}\\[0.55cm]
+				\begin{tabular}{r l}				
+					\textbf {gemittelte Fitness} $\mathbf{m}$ &\hspace{-0.45cm} $\boldsymbol{=} \bar{\mathbf{m}} \boldsymbol{\pm} \boldsymbol{\sigma}_\mathbf{m}$ \\
+					\textbf {beste Fitness} $\mathbf{m}$ &\hspace{-0.45cm} $\boldsymbol{=} \boldsymbol{\min \{} \mathbf{m_1, ..., m_{50}} \boldsymbol{\}}$ 
+				\end{tabular}
+			\end{tabular}
+		\end{center}
+	}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%	Ergebnisse konstante Mutationsrate		%
+%				Ergebnisse					%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Ergebnisse konstante Mutationsrate} 
+\section{Ergebnisse} 
 
 \begin{frame}
     \begin{center}
-	\LARGE{Konstante Mutationsrate}
+	\LARGE{Ergebnisse}
     \end{center}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Elternselektion detailiert} 
-
-    \adjustbox{valign=t}{%
-	\begin{minipage}[t]{0.68\linewidth}
-	    \includegraphics[width=8cm]{abbildungen/test.pdf}
-	\end{minipage}%
-    }
-    \begin{minipage}[t]{0.3\linewidth}
+\begin{frame}\frametitle{Darstellung eines Evolutionszyklus (n = 2)} 
+	\begin{minipage}{0.7\linewidth}
+		\includegraphics[width=8.5cm]{abbildungen/mutationsrate.pdf}
+	\end{minipage}
+	\begin{minipage}[t]{0.28\linewidth}
+	\textbf{Parameter:}
 	\begin{itemize}
-	    \item test
+	\item $p_\text{rr} = 1$ \\
+	(rangbasierte Elternselektion)\\[-0.75cm]
 	\end{itemize}
-    \end{minipage}
-
-\end{frame}
-
-\begin{frame}\frametitle{Optimale Fitnesswerte f"ur $n = 2$} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch f"ur $n = 2$} 
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%    Ergebnisse altersabhängige Mutationsrate     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Ergebnisse altersabh"angige Mutationsrate}
-
-\begin{frame}
-    
-    \begin{center}
-	\LARGE{Altersabh"angige Mutationsrate}
-    \end{center}
-
+	\end{minipage}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Elternselektion detailiert} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittleres Minimum f"ur $n = 2$} 
-
-\end{frame}
-
-\begin{frame}\frametitle{Mittlere Generationenanzahl bis Abbruch f"ur $n = 2$} 
-
+\begin{frame}\frametitle{Ausführliche Darstellung Fitness bei variablem $p_\text{rr}$ für $n = 2$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Zusammenfassung}
+\begin{frame}\frametitle{Fitness für abnehmende Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
 
+% Framebeginn...%
+\begin{frame}\frametitle{Fitness für konstante Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Fitness für zunehmende Mutationsrate bei variablem $p_\text{rr}$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 2$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 32$} 
+	\centering
+	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\end{frame}
+
+% Framebeginn...%
+	\begin{frame}\frametitle{Zusammenfassung}
+	\begin{itemize}
+		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{sehr gute} Ergebnisse ($F < 0.04$) und für $\mathbf{n>4}$ \textbf{durchschnittliche} Ergebnisse ($F < 1$)
+
+		\item es existiert \textbf{immer ein optimales Verhältnis} zwischen rangbasierter und zufälliger Elternselektion:
+			\begin{enumerate}
+				\item[(1)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+				\item[(2)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+				\item[(3)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
+			\end{enumerate}
+		
+		\item für $n \leq 4$ zunehmende Mutationsrate, für $n>4$ abnehmende Mutationsrate am genauesten
+		
+	\end{itemize}
 \end{frame}
 
 \end{document}
-

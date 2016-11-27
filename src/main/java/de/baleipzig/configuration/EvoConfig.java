@@ -17,4 +17,6 @@ public class EvoConfig {
     private GenomeConfig genomeConfig;
     private PopulationConfig populationConfig;
     private TasksConfig tasksConfig;
+    private int logGriewankDimension;
+    private int logNthRankRandomStep;
 }

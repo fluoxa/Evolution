@@ -31,7 +31,7 @@ public class ParentSelection {
     private static final Function<Population, Parents> DETERMINISTIC_PARENT_SELECTION =
             population -> selectByListManipulation(population, individuals -> {
                 Collections.sort(individuals, Collections.reverseOrder());
-                Long consideredIndividualCount = Math.max(2, Math.round(individuals.size() * 0.25));
+                Long consideredIndividualCount = Math.max(2, Math.round(individuals.size() * 0.10));
                 individuals = individuals.subList(0, consideredIndividualCount.intValue());
                 Collections.shuffle(individuals);
                 return individuals;
