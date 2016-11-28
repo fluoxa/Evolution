@@ -73,6 +73,42 @@ WindowLabel	/home/sonny/Dokumente/studium/EvoAlg/files/evoresults/evoresults.gef
 20	1	0.0914	0.143	4.52e-06	1	0.268	0.161	0.0762	1	0.353	0.274	0.0595	1	0.783	0.17	0.44	1	0.983	0.0258	0.893	
 </data>
 </table>
+<table>
+Tabelle2	30	4	28.11.16 09:25
+geometry	46	476	445	220	
+header	1[X]	mean-n4[Y]	3[yEr]	optimum-n4[Y]
+ColWidth	100	100	100	100	
+<com>
+</com>
+ColType	0;0/13	0;0/13	0;0/13	0;0/13
+ReadOnlyColumn	0	0	0	0
+HiddenColumn	0	0	0	0
+Comments					
+WindowLabel		2
+<data>
+0	0	0.498	0.192	0.153
+1	0.05	0.55	0.203	0.213
+2	0.1	0.464	0.208	0.0761
+3	0.15	0.444	0.196	0.0864
+4	0.2	0.395	0.218	0.0608
+5	0.25	0.395	0.214	0.0345
+6	0.3	0.376	0.178	0.0521
+7	0.35	0.398	0.201	0.0852
+8	0.4	0.322	0.205	0.0734
+9	0.45	0.246	0.192	0.0267
+10	0.5	0.243	0.208	0.0304
+11	0.55	0.223	0.175	0.014
+12	0.6	0.144	0.135	0.0129
+13	0.65	0.169	0.199	0.0175
+14	0.7	0.121	0.114	0.00291
+15	0.75	0.11	0.128	0.0166
+16	0.8	0.127	0.156	9.6e-05
+17	0.85	0.124	0.0791	9.7e-05
+18	0.9	0.177	0.125	0.0274
+19	0.95	0.232	0.166	0.0302
+20	1	0.268	0.161	0.0762
+</data>
+</table>
 <multiLayer>
 Grafik2	1	1	25.11.16 13:54
 geometry	658	7	495	413	
@@ -187,42 +223,6 @@ EnabledTickLabels	1	0	1	0
 <LinkXAxes>0</LinkXAxes>
 <ScaleLayers>1</ScaleLayers>
 </multiLayer>
-<table>
-Tabelle2	30	4	28.11.16 09:25
-geometry	46	476	445	220	
-header	1[X]	mean-n4[Y]	3[yEr]	optimum-n4[Y]
-ColWidth	100	100	100	100	
-<com>
-</com>
-ColType	0;0/13	0;0/13	0;0/13	0;0/13
-ReadOnlyColumn	0	0	0	0
-HiddenColumn	0	0	0	0
-Comments					
-WindowLabel		2
-<data>
-0	0	0.498	0.192	0.153
-1	0.05	0.55	0.203	0.213
-2	0.1	0.464	0.208	0.0761
-3	0.15	0.444	0.196	0.0864
-4	0.2	0.395	0.218	0.0608
-5	0.25	0.395	0.214	0.0345
-6	0.3	0.376	0.178	0.0521
-7	0.35	0.398	0.201	0.0852
-8	0.4	0.322	0.205	0.0734
-9	0.45	0.246	0.192	0.0267
-10	0.5	0.243	0.208	0.0304
-11	0.55	0.223	0.175	0.014
-12	0.6	0.144	0.135	0.0129
-13	0.65	0.169	0.199	0.0175
-14	0.7	0.121	0.114	0.00291
-15	0.75	0.11	0.128	0.0166
-16	0.8	0.127	0.156	9.6e-05
-17	0.85	0.124	0.0791	9.7e-05
-18	0.9	0.177	0.125	0.0274
-19	0.95	0.232	0.166	0.0302
-20	1	0.268	0.161	0.0762
-</data>
-</table>
 <multiLayer>
 Grafik3	1	1	28.11.16 09:28
 geometry	1158	7	494	413	active
@@ -247,7 +247,7 @@ Margin	0
 Border	0	#000000
 grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
 EnabledAxes	1	1	1	1	
-AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
+AxesTitles	Verhältnis p<sub>rr</sub>	Fitness		 	
 AxesTitleColors	#000000	#000000	#000000	#000000	
 AxesTitleAlignment	5124	5124	5124	5124
 AxesTitleDistance	2	2	2	2
@@ -292,8 +292,8 @@ EnabledTickLabels	1	0	1	0
 <LineStyle>0</LineStyle>
 <x>0.58145363408521</x>
 <y>0.77591973244147</y>
-<right>0.969924812030075</right>
-<bottom>0.640468227424749</bottom>
+<right>0.308571428571429</right>
+<bottom>0.673333333333333</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>

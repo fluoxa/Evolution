@@ -61,7 +61,7 @@ Margin	0
 Border	0	#000000
 grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
 EnabledAxes	1	1	1	1	
-AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
+AxesTitles	Verhältnis p<sub>rr</sub>	Fitness		 	
 AxesTitleColors	#000000	#000000	#000000	#000000	
 AxesTitleAlignment	5124	5124	5124	5124
 AxesTitleDistance	2	2	2	2
@@ -108,8 +108,8 @@ EnabledTickLabels	1	0	1	0
 <LineStyle>0</LineStyle>
 <x>0.72932330827068</x>
 <y>0.79704918032787</y>
-<right>1.00250626566416</right>
-<bottom>0.450819672131148</bottom>
+<right>0.315789473684211</right>
+<bottom>0.917985611510791</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
@@ -203,8 +203,8 @@ EnabledTickLabels	1	0	1	0
 <LineStyle>0</LineStyle>
 <x>0.52450980392157</x>
 <y>0.84032786885246</y>
-<right>0.791666666666667</right>
-<bottom>0.494098360655738</bottom>
+<right>0.307692307692308</right>
+<bottom>0.917985611510791</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
@@ -230,8 +230,8 @@ EnabledTickLabels	1	0	1	0
 <LineStyle>0</LineStyle>
 <x>0.024509803921569</x>
 <y>1.0639344262295</y>
-<right>0.267156862745098</right>
-<bottom>0.959344262295082</bottom>
+<right>0.307692307692308</right>
+<bottom>0.917985611510791</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>

@@ -145,98 +145,6 @@ WindowLabel		2
 20	1	0.0762	0.0291	0.0976
 </data>
 </table>
-<multiLayer>
-Grafik1	1	1	27.11.16 22:18
-geometry	69	10	503	413	
-WindowLabel		2
-Margins	5	5	5	5
-Spacing	5	5
-LayerCanvasSize	400	300
-Alignement	0	0
-<AlignPolicy>0</AlignPolicy>
-<CommonAxes>0</CommonAxes>
-<graph>
-ggeometry	5	5	485	350
-<PageGeometry>0.010101	0.0136986	0.979798	0.958904</PageGeometry>
-PlotTitle		#000000	4228
-<Antialiasing>1</Antialiasing>
-<Autoscaling>1</Autoscaling>
-<ScaleFonts>1</ScaleFonts>
-<GridOnTop>0</GridOnTop>
-<MissingDataGap>1</MissingDataGap>
-Background	#ffffff	0
-Margin	0
-Border	0	#000000
-grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
-EnabledAxes	1	1	1	1	
-AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
-AxesTitleColors	#000000	#000000	#000000	#000000	
-AxesTitleAlignment	5124	5124	5124	5124
-AxesTitleDistance	2	2	2	2
-InvertedTitle	0	0	0	0
-TitleFont	Ubuntu	11	50	0	0	0
-ScaleFont0	Ubuntu	11	75	0	0	0
-ScaleFont1	Ubuntu	11	75	0	0	0
-ScaleFont2	Ubuntu	11	75	0	0	0
-ScaleFont3	Ubuntu	11	75	0	0	0
-AxisFont0	Ubuntu	11	50	0	0	0
-AxisFont1	Ubuntu	11	50	0	0	0
-AxisFont2	Ubuntu	11	50	0	0	0
-AxisFont3	Ubuntu	11	50	0	0	0
-AxesColors	#000000	#000000	#000000	#000000
-AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
-AxesBaseline	0	0	0	0	
-CanvasBackground	#ffffff	0
-curve	Tabelle3_1	Tabelle3_decreasing-n4	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	29	1
-curve	Tabelle3_1	Tabelle3_constant-n4	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	29	1
-curve	Tabelle3_1	Tabelle3_increasing-n4	0	1	#00ff00	0	1	5	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	29	1
-scale	0	0	0.22	0	6	5	0	0
-scale	1	0	0.22	0	6	5	0	0
-scale	2	0	1	0	6	5	0	0
-scale	3	0	1	0	6	5	0	0
-LabelsFormat	0	6	0	6	0	6	0	6
-AxisType	0	0	0	0	
-MajorTicks	3	3	3	3
-MinorTicks	3	3	3	3
-TicksLength	5	9
-DrawAxesBackbone	1	1	1	1	1
-AxesLineWidth	1
-LabelsRotation	0	0	0	0
-LabelsPrefix				
-LabelsSuffix				
-TickLabelsSpace	4	4	4	4
-ShowTicksPolicy	0	0	0	0
-EnabledTickLabels	1	0	1	0
-<Legend>
-<Frame>0</Frame>
-<Color>#000000</Color>
-<FrameWidth>1</FrameWidth>
-<LineStyle>0</LineStyle>
-<x>0.33169533169533</x>
-<y>0.2127868852459</y>
-<right>0.965601965601966</right>
-<bottom>0.155803278688525</bottom>
-<attachTo>1</attachTo>
-<onTop>1</onTop>
-<visible>1</visible>
-<Text>
-\l(1) abnehmende Mutationsrate
-\l(2) konstante Mutationsrate
-\l(3) zunehmende Mutationsrate
-
-</Text>
-<Font>Ubuntu	11	50	0	0	0</Font>
-<TextColor>#000000</TextColor>
-<Background>#ffffff</Background>
-<Alpha>0</Alpha>
-<Angle>0</Angle>
-<AutoUpdate>1</AutoUpdate>
-<TeXOutput>0</TeXOutput>
-</Legend>
-</graph>
-<LinkXAxes>0</LinkXAxes>
-<ScaleLayers>1</ScaleLayers>
-</multiLayer>
 <table>
 Tabelle4	30	4	27.11.16 22:27
 geometry	600	100	445	220	
@@ -274,8 +182,99 @@ WindowLabel		2
 </data>
 </table>
 <multiLayer>
+Grafik1	1	1	27.11.16 22:18
+geometry	69	10	503	413	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	485	350
+<PageGeometry>0.010101	0.0136986	0.979798	0.958904</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Verhältnis p<sub>rr</sub>	durchschnittliche Fitness		 	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	11	50	0	0	0
+ScaleFont0	Ubuntu	11	75	0	0	0
+ScaleFont1	Ubuntu	11	75	0	0	0
+ScaleFont2	Ubuntu	11	75	0	0	0
+ScaleFont3	Ubuntu	11	75	0	0	0
+AxisFont0	Ubuntu	11	50	0	0	0
+AxisFont1	Ubuntu	11	50	0	0	0
+AxisFont2	Ubuntu	11	50	0	0	0
+AxisFont3	Ubuntu	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	Tabelle3_1	Tabelle3_decreasing-n4	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	29	0
+curve	Tabelle3_1	Tabelle3_constant-n4	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	29	1
+curve	Tabelle3_1	Tabelle3_increasing-n4	0	1	#00ff00	0	1	5	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	29	1
+scale	0	0	0.22	0	6	5	0	0
+scale	1	0	0.22	0	6	5	0	0
+scale	2	0	1	0	6	5	0	0
+scale	3	0	1	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.33169533169533</x>
+<y>0.2127868852459</y>
+<right>0.3008356545961</right>
+<bottom>0.183465703971119</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(2) konstante Mutationsrate
+\l(3) zunehmende Mutationsrate
+
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
 Grafik2	1	1	27.11.16 22:31
-geometry	633	12	495	413	active
+geometry	633	12	495	413	
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -297,7 +296,7 @@ Margin	0
 Border	0	#000000
 grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
 EnabledAxes	1	1	1	1	
-AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
+AxesTitles	Verhältnis p<sub>rr</sub>	durchschnittliche Fitness		 	
 AxesTitleColors	#000000	#000000	#000000	#000000	
 AxesTitleAlignment	5124	5124	5124	5124
 AxesTitleDistance	2	2	2	2
@@ -315,7 +314,7 @@ AxesColors	#000000	#000000	#000000	#000000
 AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
 AxesBaseline	0	0	0	0	
 CanvasBackground	#ffffff	0
-curve	Tabelle4_1	Tabelle4_decreasing-n32	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	29	1
+curve	Tabelle4_1	Tabelle4_decreasing-n32	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	29	0
 curve	Tabelle4_1	Tabelle4_constant-n32	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	29	1
 curve	Tabelle4_1	Tabelle4_increasing-n32	0	1	#00ff00	0	1	5	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	29	1
 scale	0	0.75	1.05	0	7	5	0	0
@@ -341,14 +340,13 @@ EnabledTickLabels	1	0	1	0
 <FrameWidth>1</FrameWidth>
 <LineStyle>0</LineStyle>
 <x>0.017543859649123</x>
-<y>0.8242474916388</y>
-<right>0.664160401002506</right>
-<bottom>0.762040133779264</bottom>
+<y>0.81020066889632</y>
+<right>0.307692307692308</right>
+<bottom>1.00762081784387</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
 <Text>
-\l(1) abnehmende Mutationsrate
 \l(2) konstante Mutationsrate
 \l(3) zunehmende Mutationsrate
 </Text>

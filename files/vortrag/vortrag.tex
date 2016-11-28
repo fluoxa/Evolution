@@ -353,63 +353,73 @@ Berufsakademie Leipzig
 % Framebeginn...%
 \begin{frame}\frametitle{Darstellung eines Evolutionszyklus (n = 2)} 
 	\begin{minipage}{0.7\linewidth}
-		\includegraphics[width=8.5cm]{abbildungen/mutationsrate.pdf}
+		\includegraphics[width=8.5cm]{abbildungen/oneCycleAnalysis.pdf}
 	\end{minipage}
-	\begin{minipage}[t]{0.28\linewidth}
-	\textbf{Parameter:}
-	\begin{itemize}
-	\item $p_\text{rr} = 1$ \\
-	(rangbasierte Elternselektion)\\[-0.75cm]
-	\end{itemize}
+	\begin{minipage}{0.28\linewidth}
+	    \vspace{-0.25cm}
+	    \textbf{Parameter:}
+	    \begin{itemize}
+		\item $p_\text{rr} = 1$ \\
+		(rangbasierte Elternselektion)\\[-0.25cm]
+	    \end{itemize}
+	    \textbf{Endwert:}
+	    \begin{itemize}
+		\item zunehmende Mutationsrate: $F=0.0492$\\[-0.75cm]
+		\item konstante Mutationsrate: $F=0.00008$
+	    \end{itemize}
 	\end{minipage}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Ausführliche Darstellung Fitness bei variablem $p_\text{rr}$ für $n = 2$} 
-	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+\begin{frame}\frametitle{Fitness bei variablem $p_\text{rr}$ für $n = 4$} 
+	\begin{minipage}{0.73\linewidth}
+		\includegraphics[width=9cm]{abbildungen/n4_gemittelt_minimal_increasing.pdf}
+	\end{minipage}
+	\begin{minipage}{0.26\linewidth}
+	    \vspace{-0.25cm}
+	    \textbf{Mutationsart:}
+	    \begin{itemize}
+		\item zunehmend\\[-0.25cm]
+	    \end{itemize}
+	    \textbf{Minimum:}
+	    \begin{itemize}
+		\item $p_\text{rr} = 0.8$\\
+		      $F_\text{min} = 0.0001$
+	    \end{itemize}
+	\end{minipage}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Fitness für abnehmende Mutationsrate bei variablem $p_\text{rr}$} 
+\begin{frame}\frametitle{Durchschnittliche Fitness für konstante Mutationsrate} 
 	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+	\includegraphics[width=10cm]{abbildungen/constant_allDim_average.pdf}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Fitness für konstante Mutationsrate bei variablem $p_\text{rr}$} 
+\begin{frame}\frametitle{Durchschnittliche Fitness für zunehmende Mutationsrate} 
 	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+	\includegraphics[width=10cm]{abbildungen/increasing_allDim_average.pdf}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Fitness für zunehmende Mutationsrate bei variablem $p_\text{rr}$} 
+\begin{frame}\frametitle{Vergleich beider Mutationsarten für $n = 4$} 
 	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+	\includegraphics[width=10cm]{abbildungen/vergleich_mutationsraten_n4.pdf}
 \end{frame}
 
 % Framebeginn...%
-\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 2$} 
+\begin{frame}\frametitle{Vergleich beider Mutationsarten für $n = 32$} 
 	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
-\end{frame}
-
-% Framebeginn...%
-\begin{frame}\frametitle{Vergleich der Mutationsarten für $n = 32$} 
-	\centering
-	\includegraphics[width=10cm]{abbildungen/mutationsrate.pdf}
+	\includegraphics[width=10cm]{abbildungen/vergleich_mutationsraten_n32.pdf}
 \end{frame}
 
 % Framebeginn...%
 	\begin{frame}\frametitle{Zusammenfassung}
 	\begin{itemize}
 		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{gute} Ergebnisse ($F < 0.2$) und für $\mathbf{n>4}$ \textbf{mindestens durchschnittliche} Ergebnisse ($F < 1$)
-
-		\item \textbf{abnehmende} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
-		\item \textbf{konstante} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
-		\item \textbf{zunehmende} Mutationsrate $longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr}$ nahe 1 durch hohe Diversität 
-		
-		\item zunehmende Mutationsrate mit $p_\text{rr} \geq 0.8$ am genauesten
+		\item \textbf{konstante} Mutationsrate $\longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ für alle Dimensionen durch mangelnde Diversität 
+		\item \textbf{zunehmende} Mutationsrate $\longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr} \lesssim 1$ durch hohe Diversität 
+		\item zunehmende Mutationsrate mit $p_\text{rr} \approx 0.8$ am genauesten
 		
 	\end{itemize}
 \end{frame}
