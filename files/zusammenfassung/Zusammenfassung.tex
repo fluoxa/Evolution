@@ -12,6 +12,11 @@
 \usepackage[ngerman, num]{isodate}
 \usepackage[left=3cm,right=2cm,top=2.8cm,bottom=1.6cm]{geometry}
 
+\usepackage{amsmath}  		  % für erw. Formeloptionen, Option [] zur Vermeidung von Type3-Fonts
+\usepackage{amstext}          % für Klartext via \text{} in Formeln
+\usepackage{amsfonts}         % für komplexere Formeln (Mengensymbole ...)
+\usepackage{amssymb}          % für komplexere Formeln (Mengensymbole ...)
+
 \usepackage[style=numeric]{biblatex}
 \usepackage[babel,german=guillemets]{csquotes}
 \usepackage{graphicx}
@@ -101,48 +106,52 @@
 \newpage
 	\section{Ergebnisse}
 	
-	\newcommand{\size}{0.8}
+	\newcommand{\size}{0.78}
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/oneCycleAnalysis.pdf}
-			\caption{bla blub.}
+			\caption{Darstellung der optimalen Fitness in der Population für einen vollständigen evolutionären Zyklus über mehrere Generationen.}
+			\label{fig_onecycle}
 		\end{center}
-
+	\vspace{-1.cm}
+	
 	\end{figure}
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/n4_gemittelt_minimal_increasing.pdf}
-			\caption{bla blub}
+			\caption{Für jedes Verhältnis $p_\text{rr}$ wurden 10 vollständige Zyklen (vgl. Abb. \ref{fig_onecycle}) berechnet. Beruhend auf diesen 10 Zyklen pro $p_\text{rr}$ werden hier die mittlere Fitness samt Standardabweichung (rot) sowie die beste Fitness (schwarz) dargestellt.}
 		\end{center}
 	\end{figure}
-	
+	\newpage
 	
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/constant_allDim_average.pdf}
-			\caption{bla blub}
+			\caption{Darstellung der mittleren Fitness für konstante Mutationsrate und verschiedene Dimensionen der Griewank-Funktion.}
 		\end{center}
 	\end{figure}
-	
+
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/increasing_allDim_average.pdf}
-			\caption{bla blub}
+			\caption{Darstellung der mittleren Fitness für konstante Mutationsrate und verschiedene Dimensionen der Griewank-Funktion.}
 		\end{center}
 	\end{figure}
-	
-	
+		
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/vergleich_mutationsraten_n4.pdf}
-			\caption{bla blub}
+			\caption{Vergleich Mutationsstrategien bzgl. der durchschnittlichen Fittness für n=4. }
 		\end{center}
 	\end{figure}
-	
+	\newpage
 	\begin{figure}[!h]
 		\begin{center}
 			\includegraphics[width=\size\textwidth]{../vortrag/abbildungen/vergleich_mutationsraten_n32.pdf}
-			\caption{bla blub}
+			\caption{Vergleich Mutationsstrategien bzgl. der durchschnittlichen Fittness für n=32.}
 		\end{center}
 	\end{figure}
+
+	\textbf{Zusammenfassung}: Beste Ergebnisse für zunehmende Mutationsrate und einem Rang-Zufallsverhältnis von $p_\text{rr} \approx 0.8$.
+	
 \end{document}
