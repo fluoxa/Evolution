@@ -1,0 +1,230 @@
+QtiPlot 0.9.8 project file
+<scripting-lang>	muParser
+<windows>	3
+<table>
+results	21	21	27.11.16 23:00
+geometry	76	6	1144	265	
+header	ratio[X]	average-2[Y]	err-2[Y]	optimum-2[Y]	ratio1[Y]	average-4[Y]	err-4[Y]	optimum-4[Y]	ratio2[Y]	average-8[Y]	err-8[Y]	optimum-8[Y]	ratio3[Y]	average-16[Y]	err-16[Y]	optimum-16[Y]	ratio4[Y]	average-32[Y]	err-32[Y]	optimum-32[Y]	1[Y]
+ColWidth	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	100	
+<com>
+</com>
+ColType	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3	0;0/3
+ReadOnlyColumn	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+HiddenColumn	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+Comments	ratio	average_2	err_2	optimum_2	ratio	average_4	err_4	optimum_4	ratio	average_8	err_8	optimum_8	ratio	average_16	err_16	optimum_16	ratio	average_32	err_32	optimum_32		
+WindowLabel	/home/sonny/Dokumente/studium/EvoAlg/files/evoresults/evoresults.gefixt.1620/ageBasedIncreasingMutationMixedParentSelectionratio0.5mut0.5pop16child20/results.dat	2
+<data>
+0	0	0.165	0.148	4.39e-05	0	0.498	0.192	0.153	0	0.904	0.0805	0.701	0	1	0.0198	0.897	0	1.02	0.00581	1	
+1	0.05	0.084	0.0855	5.06e-06	0.05	0.55	0.203	0.213	0.05	0.888	0.102	0.627	0.05	0.993	0.0298	0.876	0.05	1.02	0.00351	1.01	
+2	0.1	0.126	0.147	3.25e-06	0.1	0.464	0.208	0.0761	0.1	0.861	0.147	0.373	0.1	0.993	0.0264	0.911	0.1	1.01	0.00503	0.991	
+3	0.15	0.0472	0.0911	2.13e-06	0.15	0.444	0.196	0.0864	0.15	0.814	0.157	0.344	0.15	0.979	0.0362	0.873	0.15	1.01	0.00763	0.976	
+4	0.2	0.0202	0.0396	5.6e-07	0.2	0.395	0.218	0.0608	0.2	0.82	0.154	0.263	0.2	0.962	0.0619	0.722	0.2	1.01	0.00657	0.978	
+5	0.25	0.00262	0.0108	2.5e-07	0.25	0.395	0.214	0.0345	0.25	0.836	0.14	0.203	0.25	0.955	0.0785	0.611	0.25	1.01	0.00995	0.961	
+6	0.3	0.0105	0.0687	9e-07	0.3	0.376	0.178	0.0521	0.3	0.773	0.159	0.378	0.3	0.964	0.051	0.754	0.3	1	0.0116	0.955	
+7	0.35	0.00774	0.0274	2.98e-06	0.35	0.398	0.201	0.0852	0.35	0.712	0.196	0.271	0.35	0.946	0.0586	0.731	0.35	1	0.0176	0.906	
+8	0.4	0.0142	0.0352	3.9e-06	0.4	0.322	0.205	0.0734	0.4	0.766	0.228	0.138	0.4	0.941	0.0852	0.59	0.4	0.999	0.0186	0.912	
+9	0.45	0.0214	0.0339	4.5e-07	0.45	0.246	0.192	0.0267	0.45	0.781	0.168	0.357	0.45	0.924	0.0817	0.689	0.45	0.995	0.0195	0.931	
+10	0.5	0.028	0.0342	6.1e-07	0.5	0.243	0.208	0.0304	0.5	0.696	0.211	0.215	0.5	0.92	0.112	0.487	0.5	0.997	0.0174	0.906	
+11	0.55	0.0366	0.0366	4.6e-07	0.55	0.223	0.175	0.014	0.55	0.7	0.222	0.128	0.55	0.904	0.113	0.496	0.55	0.993	0.0217	0.91	
+12	0.6	0.0275	0.0265	9.46e-06	0.6	0.144	0.135	0.0129	0.6	0.635	0.255	0.143	0.6	0.881	0.114	0.441	0.6	0.994	0.0205	0.889	
+13	0.65	0.0345	0.0455	3.86e-06	0.65	0.169	0.199	0.0175	0.65	0.569	0.236	0.13	0.65	0.888	0.12	0.448	0.65	0.985	0.0343	0.861	
+14	0.7	0.0451	0.0426	9.5e-07	0.7	0.121	0.114	0.00291	0.7	0.54	0.236	0.191	0.7	0.88	0.139	0.406	0.7	0.991	0.0195	0.938	
+15	0.75	0.0608	0.0799	7.95e-06	0.75	0.11	0.128	0.0166	0.75	0.541	0.286	0.0812	0.75	0.84	0.151	0.477	0.75	0.982	0.0306	0.883	
+16	0.8	0.0545	0.053	4.15e-06	0.8	0.127	0.156	9.6e-05	0.8	0.478	0.243	0.095	0.8	0.865	0.133	0.448	0.8	0.98	0.0429	0.782	
+17	0.85	0.0847	0.166	2.41e-05	0.85	0.124	0.0791	9.7e-05	0.85	0.489	0.252	0.132	0.85	0.849	0.137	0.524	0.85	0.984	0.0268	0.897	
+18	0.9	0.0466	0.0562	1.89e-06	0.9	0.177	0.125	0.0274	0.9	0.381	0.246	0.0827	0.9	0.815	0.147	0.465	0.9	0.979	0.0324	0.848	
+19	0.95	0.076	0.0816	4.9e-06	0.95	0.232	0.166	0.0302	0.95	0.405	0.262	0.0626	0.95	0.788	0.17	0.225	0.95	0.971	0.0516	0.761	
+20	1	0.0914	0.143	4.52e-06	1	0.268	0.161	0.0762	1	0.353	0.274	0.0595	1	0.783	0.17	0.44	1	0.983	0.0258	0.893	
+</data>
+</table>
+<multiLayer>
+Grafik1	1	1	27.11.16 23:00
+geometry	82	209	486	413	
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	468	350
+<PageGeometry>0.0104603	0.0136986	0.979079	0.958904</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	11	50	0	0	0
+ScaleFont0	Ubuntu	11	75	0	0	0
+ScaleFont1	Ubuntu	11	75	0	0	0
+ScaleFont2	Ubuntu	11	75	0	0	0
+ScaleFont3	Ubuntu	11	75	0	0	0
+AxisFont0	Ubuntu	11	50	0	0	0
+AxisFont1	Ubuntu	11	50	0	0	0
+AxisFont2	Ubuntu	11	50	0	0	0
+AxisFont3	Ubuntu	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	results_ratio	results_average-32	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_average-16	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_average-8	0	1	#00ff00	0	1	5	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_average-4	0	1	#0000ff	0	1	5	0	#0000ff	#0000ff	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_average-2	0	1	#00ffff	0	1	5	0	#00ffff	#00ffff	0	#000000	14	1	2	0	0	20	1
+scale	0	0	1.1	0	7	5	0	0
+scale	1	0	1.1	0	7	5	0	0
+scale	2	0	1	0	6	5	0	0
+scale	3	0	1	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.12531328320802</x>
+<y>0.75016393442623</y>
+<right>0.483709273182957</right>
+<bottom>0.403934426229508</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+\l(2)%(2)
+\l(3)%(3)
+\l(4)%(4)
+\l(5)%(5)
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<multiLayer>
+Grafik2	1	1	27.11.16 23:04
+geometry	592	189	495	413	active
+WindowLabel		2
+Margins	5	5	5	5
+Spacing	5	5
+LayerCanvasSize	400	300
+Alignement	0	0
+<AlignPolicy>0</AlignPolicy>
+<CommonAxes>0</CommonAxes>
+<graph>
+ggeometry	5	5	477	350
+<PageGeometry>0.0102669	0.0136986	0.979466	0.958904</PageGeometry>
+PlotTitle		#000000	4228
+<Antialiasing>1</Antialiasing>
+<Autoscaling>1</Autoscaling>
+<ScaleFonts>1</ScaleFonts>
+<GridOnTop>0</GridOnTop>
+<MissingDataGap>1</MissingDataGap>
+Background	#ffffff	0
+Margin	0
+Border	0	#000000
+grid	0	0	0	0	#0000ff	0	0.5	#a0a0a4	2	0.4	#0000ff	0	0.5	#a0a0a4	2	0.4	0	0	2	0	0
+EnabledAxes	1	1	1	1	
+AxesTitles	Verhältnis rangbasiert : zufällig	Fitness		 	
+AxesTitleColors	#000000	#000000	#000000	#000000	
+AxesTitleAlignment	5124	5124	5124	5124
+AxesTitleDistance	2	2	2	2
+InvertedTitle	0	0	0	0
+TitleFont	Ubuntu	11	50	0	0	0
+ScaleFont0	Ubuntu	11	75	0	0	0
+ScaleFont1	Ubuntu	11	75	0	0	0
+ScaleFont2	Ubuntu	11	75	0	0	0
+ScaleFont3	Ubuntu	11	75	0	0	0
+AxisFont0	Ubuntu	11	50	0	0	0
+AxisFont1	Ubuntu	11	50	0	0	0
+AxisFont2	Ubuntu	11	50	0	0	0
+AxisFont3	Ubuntu	11	50	0	0	0
+AxesColors	#000000	#000000	#000000	#000000
+AxesNumberColors	#3c3c3c	#3c3c3c	#3c3c3c	#3c3c3c
+AxesBaseline	0	0	0	0	
+CanvasBackground	#ffffff	0
+curve	results_ratio	results_optimum-32	0	1	#000000	0	1	5	0	#000000	#000000	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_optimum-16	0	1	#ff0000	0	1	5	0	#ff0000	#ff0000	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_optimum-8	0	1	#00ff00	0	1	5	0	#00ff00	#00ff00	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_optimum-4	0	1	#0000ff	0	1	5	0	#0000ff	#0000ff	0	#000000	14	1	2	0	0	20	1
+curve	results_ratio	results_optimum-2	0	1	#00ffff	0	1	5	0	#00ffff	#00ffff	0	#000000	14	1	2	0	0	20	1
+scale	0	0	1.1	0	7	5	0	0
+scale	1	0	1.1	0	7	5	0	0
+scale	2	0	1	0	6	5	0	0
+scale	3	0	1	0	6	5	0	0
+LabelsFormat	0	6	0	6	0	6	0	6
+AxisType	0	0	0	0	
+MajorTicks	3	3	3	3
+MinorTicks	3	3	3	3
+TicksLength	5	9
+DrawAxesBackbone	1	1	1	1	1
+AxesLineWidth	1
+LabelsRotation	0	0	0	0
+LabelsPrefix				
+LabelsSuffix				
+TickLabelsSpace	4	4	4	4
+ShowTicksPolicy	0	0	0	0
+EnabledTickLabels	1	0	1	0
+<Legend>
+<Frame>0</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.43627450980392</x>
+<y>0.8655737704918</y>
+<right>0.806372549019608</right>
+<bottom>0.519344262295082</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1)%(1)
+\l(2)%(2)
+\l(3)%(3)
+\l(4)%(4)
+\l(5)%(5)
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+</graph>
+<LinkXAxes>0</LinkXAxes>
+<ScaleLayers>1</ScaleLayers>
+</multiLayer>
+<open>1</open>

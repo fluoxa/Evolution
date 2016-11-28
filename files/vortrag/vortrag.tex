@@ -165,10 +165,34 @@ Berufsakademie Leipzig
 	\only<3>{\put(165, 135){\parbox{4cm}{\textbf{Fitness}}}}%
 	\only<3>{\put(70, 142){\parbox{4cm}{besser}}}%
 	\only<3>{\put(250, 142){\parbox{4cm}{schlechter}}}%
-	\only<3>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline Besten}}}}%
+	\only<3>{\put(230, 45){\parbox{4cm}{\textbf{Gruppe der\newline besten 25\%}}}}%
 	\only<3>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
 	\end{picture}%
 
+\end{frame}
+\begin{frame}\frametitle{Elternselektion detailiert} 
+	
+	\begin{picture}(0,140)%
+	\only<1>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/randomParSel0.png}}}%
+	\only<1>{\put(0,160){\parbox{8cm}{\Large \textbf{Zufallsbasierte Selektion:}}}}%
+	\only<1>{\put(160, 135){\parbox{4cm}{\textbf{unsortiert}}}}%
+	\only<1>{\put(230, 5){\parbox{4cm}{\textbf{Zufallsauswahl}}}}%
+	\end{picture}%
+	
+\end{frame}
+
+\begin{frame}\frametitle{Elternselektion detailiert} 
+	
+	\begin{picture}(0,140)%
+	\only<1>{\put(60,0){\includegraphics[width=0.7\linewidth]{abbildungen/parSel0.png}}}%
+	\only<1>{\put(0,160){\parbox{10cm}{\Large \textbf{Kombination der Selektionsverfahren:}}}}%
+	\only<1>{\put(140, 125){\parbox{4cm}{\textbf{Strategieauswahl}}}}%
+	\only<1>{\put(140, 90){\parbox{4cm}{$\mathbf{p_\text{\textbf{rr}}}$}}}%
+	\only<1>{\put(215, 90){\parbox{4cm}{$\mathbf{1-p_\text{\textbf{rr}}}$}}}%
+	\only<1>{\put(60, 65){\parbox{4cm}{rangbasiert}}}%
+	\only<1>{\put(240, 65){\parbox{4cm}{zufallsbasiert}}}%
+	\end{picture}%
+	
 \end{frame}
 
 % Framebeginn...%
@@ -379,16 +403,13 @@ Berufsakademie Leipzig
 % Framebeginn...%
 	\begin{frame}\frametitle{Zusammenfassung}
 	\begin{itemize}
-		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{sehr gute} Ergebnisse ($F < 0.04$) und für $\mathbf{n>4}$ \textbf{durchschnittliche} Ergebnisse ($F < 1$)
+		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{gute} Ergebnisse ($F < 0.2$) und für $\mathbf{n>4}$ \textbf{mindestens durchschnittliche} Ergebnisse ($F < 1$)
 
-		\item es existiert \textbf{immer ein optimales Verhältnis} zwischen rangbasierter und zufälliger Elternselektion:
-			\begin{enumerate}
-				\item[(1)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-				\item[(2)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-				\item[(3)] abnehmend Mutationsrate $\longrightarrow$ $p_\text{rr} = $
-			\end{enumerate}
+		\item \textbf{abnehmende} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
+		\item \textbf{konstante} Mutationsrate $longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ durch mangelnde Diversität 
+		\item \textbf{zunehmende} Mutationsrate $longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr}$ nahe 1 durch hohe Diversität 
 		
-		\item für $n \leq 4$ zunehmende Mutationsrate, für $n>4$ abnehmende Mutationsrate am genauesten
+		\item zunehmende Mutationsrate mit $p_\text{rr} \geq 0.8$ am genauesten
 		
 	\end{itemize}
 \end{frame}
