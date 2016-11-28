@@ -106,19 +106,19 @@ EnabledTickLabels	1	0	1	0
 <Color>#000000</Color>
 <FrameWidth>1</FrameWidth>
 <LineStyle>0</LineStyle>
-<x>0.53634085213033</x>
-<y>0.38950819672131</y>
-<right>0.894736842105263</right>
-<bottom>0.0432786885245902</bottom>
+<x>0.71428571428571</x>
+<y>0.38590163934426</y>
+<right>0.987468671679198</right>
+<bottom>0.039672131147541</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
 <Text>
-\l(1)%(1)
-\l(2)%(2)
-\l(3)%(3)
-\l(4)%(4)
-\l(5)%(5)
+\l(1) n = 32
+\l(2) n = 16
+\l(3) n = 8
+\l(4) n = 4
+\l(5) n = 2
 </Text>
 <Font>Ubuntu	11	50	0	0	0</Font>
 <TextColor>#000000</TextColor>
@@ -203,8 +203,8 @@ EnabledTickLabels	1	0	1	0
 <LineStyle>0</LineStyle>
 <x>-0.16491228070175</x>
 <y>1.1598662172575</y>
-<right>0.182456140350877</right>
-<bottom>1.04347824730435</bottom>
+<right>0.220858895705521</right>
+<bottom>1.03111109647407</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>

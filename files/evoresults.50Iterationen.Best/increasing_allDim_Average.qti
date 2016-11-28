@@ -39,7 +39,7 @@ WindowLabel	/home/sonny/Dokumente/studium/EvoAlg/files/evoresults/evoresults.gef
 </table>
 <multiLayer>
 Grafik1	1	1	27.11.16 23:00
-geometry	82	209	486	413	
+geometry	82	209	486	413	active
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -106,19 +106,19 @@ EnabledTickLabels	1	0	1	0
 <Color>#000000</Color>
 <FrameWidth>1</FrameWidth>
 <LineStyle>0</LineStyle>
-<x>0.12531328320802</x>
-<y>0.75016393442623</y>
-<right>0.483709273182957</right>
-<bottom>0.403934426229508</bottom>
+<x>0.72932330827068</x>
+<y>0.79704918032787</y>
+<right>1.00250626566416</right>
+<bottom>0.450819672131148</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
 <Text>
-\l(1)%(1)
-\l(2)%(2)
-\l(3)%(3)
-\l(4)%(4)
-\l(5)%(5)
+\l(1) n = 32
+\l(2) n = 16
+\l(3) n = 8
+\l(4) n = 4
+\l(5) n = 2
 </Text>
 <Font>Ubuntu	11	50	0	0	0</Font>
 <TextColor>#000000</TextColor>
@@ -134,7 +134,7 @@ EnabledTickLabels	1	0	1	0
 </multiLayer>
 <multiLayer>
 Grafik2	1	1	27.11.16 23:04
-geometry	592	189	495	413	active
+geometry	592	189	495	413	
 WindowLabel		2
 Margins	5	5	5	5
 Spacing	5	5
@@ -201,10 +201,37 @@ EnabledTickLabels	1	0	1	0
 <Color>#000000</Color>
 <FrameWidth>1</FrameWidth>
 <LineStyle>0</LineStyle>
-<x>0.43627450980392</x>
-<y>0.8655737704918</y>
-<right>0.806372549019608</right>
-<bottom>0.519344262295082</bottom>
+<x>0.52450980392157</x>
+<y>0.84032786885246</y>
+<right>0.791666666666667</right>
+<bottom>0.494098360655738</bottom>
+<attachTo>1</attachTo>
+<onTop>1</onTop>
+<visible>1</visible>
+<Text>
+\l(1) n = 32
+\l(2) n = 16
+\l(3) n = 8
+\l(4) n = 4
+\l(5) n = 2
+</Text>
+<Font>Ubuntu	11	50	0	0	0</Font>
+<TextColor>#000000</TextColor>
+<Background>#ffffff</Background>
+<Alpha>0</Alpha>
+<Angle>0</Angle>
+<AutoUpdate>1</AutoUpdate>
+<TeXOutput>0</TeXOutput>
+</Legend>
+<Legend>
+<Frame>1</Frame>
+<Color>#000000</Color>
+<FrameWidth>1</FrameWidth>
+<LineStyle>0</LineStyle>
+<x>0.024509803921569</x>
+<y>1.0639344262295</y>
+<right>0.267156862745098</right>
+<bottom>0.959344262295082</bottom>
 <attachTo>1</attachTo>
 <onTop>1</onTop>
 <visible>1</visible>
