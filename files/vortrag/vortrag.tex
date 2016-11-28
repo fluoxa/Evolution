@@ -81,6 +81,16 @@ item}##1}}%
 
 \makeatother
 
+% verstecken der Backupfolien am Ende %
+
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
 % praesentationsbeginn %
 
 \begin{document}
@@ -288,7 +298,7 @@ Berufsakademie Leipzig
 	\begin{minipage}{0.45\linewidth}
 		\vspace{-0.7cm}
 		$rnd() \in [0,1]$ \\ $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\[0.2cm]
-		$m(a)$ \\ $^{}$ \hspace{0.2cm} ... (altersabhg.) Mutationsrate\\[0.2cm]
+		$m : a \in \mathds{N}_0 \mapsto m(a) \in [0,1]$ \\ $^{}$ \hspace{0.2cm} ... (altersabhg.) Mutationsrate\\[0.2cm]
 		$\textcolor{alert}{M_\text{rnd} \in [-5,5]}$ \\  $^{}$ \hspace{0.2cm} ... gleichverteilte Zufallszahl\\
 	\end{minipage}
 	
@@ -365,7 +375,7 @@ Berufsakademie Leipzig
 	    \textbf{Endwert:}
 	    \begin{itemize}
 		\item zunehmende Mutationsrate: $F=0.0492$\\[-0.75cm]
-		\item konstante Mutationsrate: $F=0.00008$
+		\item konstante\\ Mutationsrate: $F=0.00008$
 	    \end{itemize}
 	\end{minipage}
 \end{frame}
@@ -414,14 +424,34 @@ Berufsakademie Leipzig
 \end{frame}
 
 % Framebeginn...%
-	\begin{frame}\frametitle{Zusammenfassung}
+\section{Zusammenfasung}
+
+\begin{frame}
+    \begin{center}
+	\LARGE{Zusammenfasung}
+    \end{center}
+\end{frame}
+
+\begin{frame}\frametitle{Zusammenfassung}
 	\begin{itemize}
 		\item Algorithmus liefert $\mathbf{n \leq 4}$ \textbf{gute} Ergebnisse ($F < 0.2$) und für $\mathbf{n>4}$ \textbf{mindestens durchschnittliche} Ergebnisse ($F < 1$)
 		\item \textbf{konstante} Mutationsrate $\longrightarrow$ \textbf{kaum Variation} bzgl. $p_\text{rr}$ für alle Dimensionen durch mangelnde Diversität 
-		\item \textbf{zunehmende} Mutationsrate $\longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr} \lesssim 1$ durch hohe Diversität 
-		\item zunehmende Mutationsrate mit $p_\text{rr} \approx 0.8$ am genauesten
-		
+		\item \textbf{zunehmende} Mutationsrate $\longrightarrow$ \textbf{signifikant bessere} Ergebnisse für $p_\text{rr} > 0.2$ durch hohe Diversität 
+		\item zunehmende Mutationsrate mit $0.8 \lesssim p_\text{rr}$ am genauesten		
 	\end{itemize}
 \end{frame}
 
+\appendix
+
+\backupbegin
+\section{Optimierung}
+\begin{frame}<presentation:1>\frametitle{Mögliche Optimierungen}
+	\begin{itemize}
+		\item Erhöhung der Populationgröße
+		\item Vergrößerung der Kindpopulation
+		\item ``Mutationsstärke'' nicht gleichverteilt sondern normalverteilt 
+		\item Klonen des momentan besten Individuums		
+	\end{itemize}
+\end{frame}
+\backupend
 \end{document}
